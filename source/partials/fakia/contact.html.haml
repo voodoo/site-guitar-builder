@@ -1,0 +1,28 @@
+/ *** START CONTACT SECTION ***
+%section#contact
+  .container.text-center
+    .row
+      .col-md-12
+        .title-light.text-center
+          / TITLE
+          %h2{"data-sr" => "enter left please, and hustle 20px"} Hello! We would be more than happy to chat with you!
+          / CONTENT
+          %p.col-md-6.col-md-offset-3{"data-sr" => "wait 0.4s and then ease-in-out 100px"} If you want to recieve monthly updates from us just pop your email in the box. We think that spam is for jerks. And jerks we are not.
+      .col-md-12{"data-sr" => "wait 0.4s and then ease-in-out 100px"}
+        / START CONTACT FORM
+        %form#messagecontact{:action => "php/contact.php", :method => "post"}
+          #messages
+          / NAME
+          .col-md-3.form-group.wow.slideInRight
+            %input.form-control{:name => "name", :placeholder => "Full name", :required => "required", :type => "text"}
+          / EMAIL
+          .col-md-3.form-group.wow.slideInRight
+            %input.form-control{:name => "email", :placeholder => "Email Address", :required => "required", :type => "email"}
+          / MESSAGE
+          .col-md-3.form-group.wow.slideInRight
+            %input.form-control{:name => "message", :placeholder => "Your message or question", :required => "required", :rows => "3"}
+          / BUTTON SUBMIT
+          .col-md-3.wow.slideInRight
+            %button#gform_submit_button_1.btn.btn-default{:type => "submit"} Send my message
+        / END CONTACT FORM
+/ *** END CONTACT SECTION ***

@@ -1,0 +1,63 @@
+/ *** START NAVIGATION ***
+%nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
+  .navbar-inner
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{"data-scroll" => "", :href => "#home"}
+        / LOGO COMPANY
+        %img{:src => "/images/logo.png"}
+        %span Sharktail
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        / %li
+        /   %a{"data-scroll" => "", :href => "#home"} Custom      
+        %li
+          %a{"data-scroll" => "", :href => "#overview"} Modern
+        %li
+          %a{"data-scroll" => "", :href => "#gallery"} Ergonomic
+        %li
+          %a{"data-scroll" => "", :href => "#footer"} Guitars
+        %li
+          %a{"data-scroll" => "", :href => "#scene"} See
+        %li
+          %a{"data-scroll" => "", :href => "#customize"} Build          
+
+        / %li
+        /   %a{"data-scroll" => "", :href => "#features"} Features
+        / %li
+        /   %a{"data-scroll" => "", :href => "#compatibility"} Compatibility
+        / %li
+        /   %a{"data-scroll" => "", :href => "#screenshots"} Screenshots
+        %li.divider
+        /
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-cogs"></i>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+          <li>
+          <a href="#" data-scroll>Stay tuned</a>
+          </li>
+          <li>
+          <a href="#" data-scroll>Download</a>
+          </li>
+          <li>
+          <a href="#" data-scroll>News</a>
+          </li>
+          <li>
+          <a href="#" data-scroll>Price</a>
+          </li>
+          <li>
+          <a href="#">Shortcodes</a>
+          </li>
+          </ul>
+          </li>
+        %li
+          %a.contact-btn{:href => "mailto:question@sharktailguitars.com"}
+            %i.fa.fa-envelope-o
+/ *** END NAVIGATION ***

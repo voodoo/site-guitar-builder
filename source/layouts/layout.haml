@@ -1,0 +1,22 @@
+!!!
+%html{:lang => "en-us"}
+  %head
+    %meta{:charset => "utf-8"}
+      %title Custom Modern Ergonomic Guitars
+    %meta{:content => "Custom Modern Guitars", :name => "description"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:content => "", :name => "author"}
+    / ============ Google fonts ============
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:300,400,700", :rel => "stylesheet", :type => "text/css"}
+    / Favicon
+    %link{:href => "/images/logo.png", :rel => "shortcut icon", :type => "image/x-icon"}/
+    / Latest compiled and minified CSS
+    %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}
+    / ============ Add custom CSS here ============
+    %link{:href => "css/font-awesome.min.css", :rel => "stylesheet"}
+    %link{:href => "css/swipebox.css", :rel => "stylesheet", :type => "text/css"}
+    / link href="css/xnormalize.css" rel="stylesheet" type="text/css"
+    %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "css/shark.css", :rel => "stylesheet", :type => "text/css"}
+
+  %body= yield

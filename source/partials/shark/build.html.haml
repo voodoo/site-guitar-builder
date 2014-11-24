@@ -1,0 +1,28 @@
+%section#customize
+  .container
+    .row
+      .col-md-12
+        %h1 
+          Customize 
+          %small.text-muted and get in the queue
+        %div{:role => "tabpanel"}
+          / Nav tabs
+          %ul.nav.nav-tabs{:role => "tablist"}
+            %li.active{:role => "presentation"}
+              %a{"aria-controls" => "home", "data-toggle" => "tab", :href => "#sizes", :role => "tab"} Sizes
+            %li{:role => "presentation"}
+              %a{"aria-controls" => "profile", "data-toggle" => "tab", :href => "#profile", :role => "tab"} Body
+            %li{:role => "presentation"}
+              %a{"aria-controls" => "messages", "data-toggle" => "tab", :href => "#messages", :role => "tab"} Pickups
+            %li{:role => "presentation"}
+              %a{"aria-controls" => "settings", "data-toggle" => "tab", :href => "#settings", :role => "tab"} Colors
+          / Tab panes
+          .tab-content
+            #home.container.tab-pane.active{:role => "tabpanel"}
+              = partial ("partials/shark/build/sizes")
+            #profile.tab-pane{:role => "tabpanel"}
+              Body
+            #messages.tab-pane{:role => "tabpanel"}
+              Pickups
+            #settings.tab-pane{:role => "tabpanel"}
+              Colors
