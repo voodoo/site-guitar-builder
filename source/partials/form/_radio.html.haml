@@ -1,0 +1,12 @@
+.form-group
+  %label.col-md-2.control-label{:for => "radios"}= title
+  .col-md-3
+    - options.each_with_index do |option, idx|
+      .radio
+        - id = "#{id_for(title)}-#{idx}"
+        %label{:for => id}
+          %input{id: id, :checked => (1 if idx.zero?), :name => id_for(title), :type => "radio", :value => option}
+            = option
+  .col-md-3
+    %small.text-muted= hint
+  

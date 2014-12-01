@@ -11,12 +11,13 @@
     / Favicon
     %link{:href => "/images/logo.png", :rel => "shortcut icon", :type => "image/x-icon"}/
     / Latest compiled and minified CSS
-    %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}
-    / ============ Add custom CSS here ============
-    %link{:href => "css/font-awesome.min.css", :rel => "stylesheet"}
-    %link{:href => "css/swipebox.css", :rel => "stylesheet", :type => "text/css"}
-    / link href="css/xnormalize.css" rel="stylesheet" type="text/css"
-    %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}
-    %link{:href => "css/shark.css", :rel => "stylesheet", :type => "text/css"}
+    = stylesheet_link_tag "all"
+    / %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}
+    / / ============ Add custom CSS here ============
+    / %link{:href => "css/font-awesome.min.css", :rel => "stylesheet"}
+    / %link{:href => "css/swipebox.css", :rel => "stylesheet", :type => "text/css"}
+    / / link href="css/xnormalize.css" rel="stylesheet" type="text/css"
+    / %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}
+    / %link{:href => "css/shark.css", :rel => "stylesheet", :type => "text/css"}
 
   %body= yield

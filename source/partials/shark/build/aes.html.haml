@@ -1,0 +1,3 @@
+%fieldset
+  - build_for(:aes).each do |build|
+    = partial('partials/form/radio', locals: build )

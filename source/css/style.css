@@ -396,9 +396,10 @@ p a:hover {
     font-size: 28px
 }
 .navbar-brand img {
-    float: left;
+    display:none;
+    /*float: left;
     height: 97px;
-    width: 200px
+    width: 200px*/
 }
 .navbar-brand span {
     float: left;
@@ -527,6 +528,7 @@ p a:hover {
 }
 .navbar.navbar-shrink .navbar-brand img {
     float: left;
+    display:block;
     height: 49px;
     width: 100px
 }
@@ -559,6 +561,12 @@ p a:hover {
     background: rgba(0, 0, 0, 0.8);
     height: 100%;
 }
+
+/*#scene .scene-bg {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100%;
+
+}*/
 /* Don't display the logo for Phone */
  .logo-phone {
     display: none;

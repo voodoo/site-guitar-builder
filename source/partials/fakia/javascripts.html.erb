@@ -54,7 +54,18 @@ $(window).load(function () {
 /* ========================== */
 // You may also attach Backstretch to a block-level element
 $("header").backstretch("/img/shark/bg/sea.jpg");
-$("#pricing").backstretch("img/bg-2.jpg");
+$("#scene").backstretch("/img/shark/bg/wood.jpg");
+$('#btnConfirm').on('click', function(e){
+    //e.preventDefault()
+    //var body=encodeURIComponent()
+    var s    = $(document.forms[0]).serialize()
+    console.log(s)
+    var body = encodeURIComponent("\n\n" + s.replace(/&/g,'\n'))
+    console.log(body)
+    var mailto="mailto:e@mail.com?subject=Custom build&body=" +
+               "Hello, here is my custom config, make it so!"
+    $(this).attr('href',mailto + body)
+})
 </script>
 
 <script>
@@ -73,16 +84,16 @@ $("#pricing").backstretch("img/bg-2.jpg");
 /* ============================== */
 /* ::::::: Firefly effect ::::::: */
 /* ============================== */
-$(window).load(function() {
-    'use strict';
-    $.firefly({
-        color: '#fff',
-        minPixel: 1,
-        maxPixel: 3,
-        total : 50,
-        on: 'header'
-    });
-});
+// $(window).load(function() {
+//     'use strict';
+//     $.firefly({
+//         color: '#ddd',
+//         minPixel: 1,
+//         maxPixel: 3,
+//         total : 50,
+//         on: 'header'
+//     });
+// });
 </script>
 
 <script>
@@ -115,22 +126,22 @@ smoothScroll.init({
 /* ================================= */
 /* ::::::: Subscrition form :::::::: */
 /* ================================= */
-$('form#subscribe').submit(function(e){
-    e.preventDefault();
-    $.post($(this).attr('action'),$(this).serialize(),function(data){
-        $('input#newsletterText').val('').attr('placeholder',data);
-    });
-});
+// $('form#subscribe').submit(function(e){
+//     e.preventDefault();
+//     $.post($(this).attr('action'),$(this).serialize(),function(data){
+//         $('input#newsletterText').val('').attr('placeholder',data);
+//     });
+// });
 </script>
 
 <script>
 /* =========================== */
 /* ::::::: Email form :::::::: */
 /* =========================== */
-$('form#messagecontact').submit(function(e){
-    e.preventDefault();
-    $.post($(this).attr('action'),$(this).serialize(),function(data){
-        $('div#messages').html(data);
-    });
-});
+// $('form#messagecontact').submit(function(e){
+//     e.preventDefault();
+//     $.post($(this).attr('action'),$(this).serialize(),function(data){
+//         $('div#messages').html(data);
+//     });
+// });
 </script>
