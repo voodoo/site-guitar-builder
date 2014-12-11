@@ -1,0 +1,59 @@
+%a(name="neck")
+= partial("builder/partials/page", locals: {title: "Neck"}) do
+  %h3 Size
+  %ul{"data-role" => "listview", "data-inset" => "true"}
+    %li(data-role="list-divider" ) Scale
+    %li
+      %div{"data-role" => "controlgroup"}
+        %label 
+          25.5
+          %input(type="radio" name="neck_scale" value="25.5" checked)
+        %label 
+          24.75
+          %input(type="radio" name="neck_scale" value="24.75")  
+
+  %fieldset{"data-role" => "controlgroup", "data-type" => "horizontal"}
+    %legend Neck Contour 
+    %label 
+      C
+      %input(type="radio" name="neck_contour" value="c" )  
+    %label 
+      D
+      %input(type="radio" name="neck_contour" value="d" checked )
+    %label 
+      V
+      %input(type="radio" name="neck_contour" value="v")   
+
+  
+  %fieldset{"data-role" => "controlgroup", "data-type" => "horizontal"}
+    %legend Neck Thickness 
+    .ui-grid-c.center
+      .ui-block-a
+        %label 
+          Thin
+          %input(type="radio" name="neck_thickness" value="Thin" ) 
+      .ui-block-b     
+        %label 
+          Normal
+          %input(type="radio" name="neck_thickness" value="normal" checked )
+      .ui-block-c          
+        %label 
+          Thick
+          %input(type="radio" name="neck_thickness" value="Thick")        
+
+  %fieldset{"data-role" => "controlgroup", "data-type" => "horizontal"}
+    %legend Nut Width  
+    %label 
+      1 5/8
+      %input(type="radio" name="nut_width" value="1 5/8" checked)
+    %label 
+      1 11/16
+      %input(type="radio" name="nut_width" value="1 11/16") 
+ 
+  %ul{"data-role" => "listview", "data-inset" => "true"}
+    %li(data-role="list-divider") Wood
+  %ul{"data-role" => "listview", "data-inset" => "true"}
+    %li(data-role="list-divider") Hardware
+
+
+

@@ -1,0 +1,34 @@
+
+/ begin:modal-more
+%secction#modal-more.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .modal-close{"data-dismiss" => "modal"}
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .modal-body
+            .title-light.text-center
+              / TITLE
+              %h2 Super-sweet animations.
+              / CONTENT
+              %p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              %p
+                Did you notice the
+                %strong animations?
+                Those trigger on the position of the scrollbar to the right. It is extremely easy to setup, all you need to do is choose the animation and the place you want it to trigger from.
+              %p Did you notice the animations? Those trigger on the position of the scrollbar to the right. It is extremely easy to setup, all you need to do is choose the animation and the place you want it to trigger from.
+              %ul.list-inline
+                %li
+                  Tags :
+                  %strong
+                    %a{:href => "#"}> Lorem
+                    ,
+                    %a{:href => "#"} Lorem
+                %li
+                  Categories :
+                  %strong
+                    %a{:href => "#"} Lorem
+              %button.btn.btn-light{"data-dismiss" => "modal", :type => "button"}
+                %i.fa.fa-times
+                Close
+  / end:modal-more

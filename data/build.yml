@@ -1,0 +1,128 @@
+body:
+  - 
+   title: Body Size
+   options: 
+     - Normal
+     - Petite
+     - Large
+   hint: Sharktail Guitars are smaller than normal
+   help: You can create the size that is best for you
+  -
+   title: Body Shape
+   options: 
+     - Shark
+     - Strat
+     - Tele
+     - Wolf
+   hint: Modern or traditional
+   help: Or design your own!  
+  -
+   title: Bridge type
+   options: 
+     - Tremolo
+     - Fixed
+  -
+   title: Bridge brand
+   options: 
+     - Floyd Rose
+     - Kahler   
+  -
+   title: Accent Wood
+   options: 
+     - Maple
+     - Paduk
+     - Mahagony
+     - Walnut
+     - Koa
+   hint: The top piece - cap / pickguard
+   help: Any wood you like 
+  -
+   title: Accent Color
+   options: 
+     - Natural
+     - Red
+     - Blue
+     - Green
+   hint: The color of the top figured wood
+   help:     
+  - 
+   title: Base Wood
+   options: 
+     - Walnut
+     - Mahagony
+     - Swamp Ash
+   hint: The wood the wings are made out of
+   help:  
+  - 
+   title: Base Color
+   options: 
+     - Natural
+     - Red
+     - Blue
+     - Green
+   hint: The color of the base wood
+   help:     
+neck: 
+  -
+   title: Scale length
+   options: 
+     - "25.5"
+     - "24.75"
+   hint: Size from nut to bridge
+   help: Longer armed people like the longer scale 
+  - 
+   title: Neck through wood
+   options: 
+     - Walnut - Mahagony
+     - Mahagony - Maple
+   hint: Not a bolt on
+   help: The 5 1/2 pieces of wood make up the neck through
+  - 
+    title: Fretboard wood
+    options:
+      - Ebony
+      - Maple
+  - 
+    title: Tuners
+    options:
+      - Sperzel
+      - Steinberger
+      - Gotoh
+    hint:     
+    help:     
+  - 
+    title: Head shape
+    options:
+      - Sharktail
+      - Strat
+      - Tele
+      - None
+    hint: Choose none for a headless
+    help: If you want tuners on the body we can make the head a prop  
+  - 
+    title: Tuner placement
+    options:
+      - 6 inline
+      - 3 x 3
+      - 4 x 2
+    hint: Where the tuners will reside on the head
+    help: Make sure the shape will accomodate them 
+  - 
+    title: Number of frets
+    options:
+      - "22"
+      - "24"
+  - 
+    title: Fret material
+    options:
+      - Stainless steel
+      - Brass
+      - Nickel
+
+  - 
+    title: Fret size
+    options:
+      - Jumbo
+      - Medium
+      - Medium/Jumbo
+     

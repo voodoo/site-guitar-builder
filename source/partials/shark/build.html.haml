@@ -1,33 +1,35 @@
-%form.form-horizontal
+%form.form-horizontal(data-persist="garlic")
   %section#build
     .container
       .row
         .col-md-12
           %h1 
             Build 
-            %small.text-muted customize your git
+            %small.text-muted 
+              your custom guitar
           %div{:role => "tabpanel"}
             / Nav tabs
             %ul.nav.nav-tabs{:role => "tablist"}
               %li.active{:role => "presentation"}
                 %a{"aria-controls" => "home", "data-toggle" => "tab", :href => "#build-size", :role => "tab"} 
-                  %i.fa.fa-retweet
-                  &nbsp;
-                  Size
+                  %i.fa.fa-retweet                  
+                  %span.hidden-xs &nbsp; Size
               %li{:role => "presentation"}
                 %a{"aria-controls" => "profile", "data-toggle" => "tab", :href => "#build-hw", :role => "tab"} 
                   %i.fa.fa-rocket
-                  Hardware
+                  %span.hidden-xs &nbsp; Hardware
               %li{:role => "presentation"}
                 %a{"aria-controls" => "messages", "data-toggle" => "tab", :href => "#build-aes", :role => "tab"} 
                   %i.fa.fa-paint-brush
-                  &nbsp;
-                  Aesthetics
+                  %span.hidden-xs &nbsp; Aesthetics
+              %li{:role => "presentation"}
+                %a{"aria-controls" => "messages", "data-toggle" => "tab", :href => "#build-gw", :role => "tab"} 
+                  %i.fa.fa-fire
+                  %span.hidden-xs &nbsp; Great White                  
               %li{:role => "presentation", class: "pull-right"}
                 %a{"aria-controls" => "settings", "data-toggle" => "tab", :href => "#build-confirm", :role => "tab"} 
                   %i.fa.fa-send
-                  &nbsp;
-                  Confirm
+                  %span.hidden-xs &nbsp; Confirm
             / Tab panes
             .tab-content
               #build-size.container.tab-pane.active{:role => "tabpanel"}
@@ -36,5 +38,7 @@
                 = partial ("partials/shark/build/hw")
               #build-aes.tab-pane.fade{:role => "tabpanel"}
                 = partial ("partials/shark/build/aes")
+              #build-gw.tab-pane.fade{:role => "tabpanel"}
+                = partial ("partials/shark/build/great-white")                
               #build-confirm.tab-pane.fade{:role => "tabpanel"}
                 = partial ("partials/shark/build/confirm")

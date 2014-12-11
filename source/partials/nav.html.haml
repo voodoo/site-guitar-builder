@@ -21,43 +21,10 @@
         %li
           %a{"data-scroll" => "", :href => "#overview"} Modern
         %li
-          %a{"data-scroll" => "", :href => "#gallery"} Ergonomic
+          %a{"data-scroll" => "", :href => "#ergo-gallery"} Ergonomic
         %li
           %a{"data-scroll" => "", :href => "#scene"} See
         %li
-          %a{"data-scroll" => "", :href => "#build"} Build          
-
-        / %li
-        /   %a{"data-scroll" => "", :href => "#features"} Features
-        / %li
-        /   %a{"data-scroll" => "", :href => "#compatibility"} Compatibility
-        / %li
-        /   %a{"data-scroll" => "", :href => "#screenshots"} Screenshots
-        %li.divider
-        /
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <i class="fa fa-cogs"></i>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-          <li>
-          <a href="#" data-scroll>Stay tuned</a>
-          </li>
-          <li>
-          <a href="#" data-scroll>Download</a>
-          </li>
-          <li>
-          <a href="#" data-scroll>News</a>
-          </li>
-          <li>
-          <a href="#" data-scroll>Price</a>
-          </li>
-          <li>
-          <a href="#">Shortcodes</a>
-          </li>
-          </ul>
-          </li>
+          = link_to "Build", "/builder", target: '_blank'
         %li
-          %a.contact-btn{:href => "mailto:question@sharktailguitars.com"}
-            %i.fa.fa-envelope-o
-/ *** END NAVIGATION ***
+          %a{:href => "http://forum.sharktailguitars.com", target: '_blank'} Talk                  

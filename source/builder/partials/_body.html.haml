@@ -1,0 +1,25 @@
+%h1 Body
+%a(name="body")
+.container
+  .row
+    .col-md-3
+      %label(for="body_size")
+        Size
+    .col-md-4
+      .radio
+        %label 
+          %input(type="radio" name="body_size" value="petite")  
+          Petite
+      .radio
+        %label 
+          %input(type="radio" name="body_size" value="normal" checked)
+          Normal
+      .radio
+        %label 
+          %input(type="radio" name="body_size" value="large")
+          Large
+
+    .col-md-5
+      HINT
+
+      

@@ -81,7 +81,29 @@ module BuildHelpers
 					  hint: 		"Sharktail's are neck throughs made up of 5 1/2 pieces"
 				}												
 
-		]		
+		],
+		gw: [
+     {
+     	title: "Headless",
+	    options: ["No","Yes"],
+	    hint: "The tuners on the bridge"
+	   },			
+     {
+     	title: "Tremolo",
+	    options: ["None","Floyd Rose","Kahler"],
+	    hint: "Choose your tremolo"
+	   },
+     {
+     	title: "Fanned Frets",
+	    options: ["None","5th Fret","8th Fret"],
+	    hint: "Do you want fanned frets?"
+	   },
+     {
+     	title: "Piezo",
+	    options: ["None","Ghost","Other"],
+	    hint: "For the accoustic sound"
+	   }	   	   
+		]	
 
 		}[which]
 	end

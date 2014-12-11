@@ -1,0 +1,22 @@
+/ *** START NAVIGATION ***
+%nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
+  .navbar-inner
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{"data-scroll" => "", :href => "/"}
+        %img{:src => "/img/shark/logo/small.png", class: 'img-responsive'}
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          %a{"data-scroll" => "", :href => "#builder"} Guitar Builder       
+        %li
+          %a{"data-scroll" => "", :href => "#body"} Body      
+        %li
+          %a{"data-scroll" => "", :href => "#neck"} Neck
+        %li
+          %a{"data-scroll" => "", :href => "#preview"} Preview

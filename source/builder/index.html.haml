@@ -1,0 +1,47 @@
+= partial('builder/partials/nav')
+%h1 
+  Builder
+  %small.text-muted 
+    for any guitar
+%form(data-persist="garlic" id='frmBuilder')
+  %a(name="body")
+  %fieldset    
+    %legend Body
+    - data.build.body.each do |body|
+      = partial('partials/form/radio', locals: body )
+  %a(name="neck")
+  %fieldset
+    
+    %legend Neck
+    - data.build.neck.each do |neck|
+      = partial('partials/form/radio', locals: neck ) 
+
+  %a(name="preview") 
+  %fieldset(id="fsPreview")   
+    %legend Preview
+    - data.build.body.each do |body|
+      %p 
+        %label=body.title  
+        \: 
+        %span(id="value-#{id_for(body.title)}")
+    - data.build.neck.each do |neck|
+      %p 
+        %label=neck.title   
+        \:
+        %span(id="value-#{id_for(neck.title)}")        
+  
+  %p
+    %button(type='submit'  class='btn btn-success btn-block') 
+      Copy and/or Send  
+
+:css
+  .navbar-brand img{
+    margin-top: -12px;
+  }
+  body{
+    padding-top:60px;
+  }
+  .form-group{
+  border-bottom:1px solid #ccc;
+  }
+

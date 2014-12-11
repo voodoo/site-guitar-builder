@@ -1,12 +1,24 @@
-.form-group
-  %label.col-md-2.control-label{:for => "radios"}= title
-  .col-md-3
+.row.form-group
+  .col-sm-3
+    %label.control-label{:for => "radios"}=title
+    .text-muted= locals[:hint]
+
+  .col-sm-2
     - options.each_with_index do |option, idx|
       .radio
         - id = "#{id_for(title)}-#{idx}"
         %label{:for => id}
           %input{id: id, :checked => (1 if idx.zero?), :name => id_for(title), :type => "radio", :value => option}
             = option
-  .col-md-3
-    %small.text-muted= hint
+    - id = "#{id_for(title)}-other"
+    .radio
+      %label{:for => id}
+        %input{id: id, :name => id_for(title), :type => "radio", value: "OTHER", class: 'other'}
+          Other 
+      .other-value(style="display:none;padding-left:16px")   
+        %input{id: id + '-value', :name => (id_for(title) + "-other-value"), :type => "text", :placeholder => "Other Value"}
+    
+
+  .col-sm-7
+    %small.text-muted= locals[:help]
   

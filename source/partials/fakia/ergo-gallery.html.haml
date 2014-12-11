@@ -1,0 +1,19 @@
+/ *** START GALLERY SECTION ***
+%section#ergo-gallery.bg-grey
+  .container
+    .row
+      .col-md-12
+        .title-light.text-center
+          / TITLE
+          %h2{"data-sr" => "enter left please, and hustle 20px"} 
+            A 
+            %b Sharktail 
+            sitting on your lap
+          / CONTENT
+          %p.col-md-6.col-md-offset-3{"data-sr" => "wait 0.4s and then ease-in-out 100px"}
+            multiple ergonomic angles
+            
+      - %w[30singlemiddle 45leftsingle 45middlesingle 55].each do |img|
+        .col-md-3{"data-sr" => "wait 0.4s and then ease-in-out 100px"}
+          %a.swipebox{:href => "/img/shark/angles/#{img}.png", :title => img}
+            %img.img-responsive{:src => "/img/shark/angles/#{img}.png"}/
