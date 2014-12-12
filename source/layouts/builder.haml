@@ -12,10 +12,11 @@
     %script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
     %script(src="/javascripts/jq-hash-serialize.js")
 
-  %body
+  %body(data-spy="scroll" data-target=".navbar-default")
     %a(name="builder")
-    .container= yield
-  %script(src="/js/bootstrap.min.js")
-  %script(src="/javascripts/garlic.min.js")
-  %script(src="/javascripts/builder.js")
+      #builder
+      .container= yield
+    %script(src="/js/bootstrap.min.js")
+    %script(src="/javascripts/garlic.min.js")
+    %script(src="/javascripts/builder.js")
 

@@ -26,6 +26,14 @@ body:
    options: 
      - Floyd Rose
      - Kahler   
+
+  -
+   title: Bridge material
+   options: 
+     - Gold
+     - Chrome
+     - Black
+
   -
    title: Accent Wood
    options: 
@@ -62,6 +70,7 @@ body:
      - Green
    hint: The color of the base wood
    help:     
+# --------------------------------------- NECK -------------------------------------
 neck: 
   -
    title: Scale length
@@ -89,7 +98,13 @@ neck:
       - Steinberger
       - Gotoh
     hint:     
-    help:     
+    help:   
+  -
+   title: Tuner material
+   options: 
+     - Gold
+     - Chrome
+     - Black      
   - 
     title: Head shape
     options:

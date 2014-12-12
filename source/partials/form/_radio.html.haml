@@ -1,9 +1,9 @@
 .row.form-group
-  .col-sm-3
+  .col-sm-2
     %label.control-label{:for => "radios"}=title
     .text-muted= locals[:hint]
 
-  .col-sm-2
+  .col-sm-3
     - options.each_with_index do |option, idx|
       .radio
         - id = "#{id_for(title)}-#{idx}"

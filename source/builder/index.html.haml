@@ -3,36 +3,26 @@
   Builder
   %small.text-muted 
     for any guitar
-%form(data-persist="garlic" id='frmBuilder')
-  %a(name="body")
-  %fieldset    
-    %legend Body
-    - data.build.body.each do |body|
-      = partial('partials/form/radio', locals: body )
-  %a(name="neck")
-  %fieldset
-    
-    %legend Neck
-    - data.build.neck.each do |neck|
-      = partial('partials/form/radio', locals: neck ) 
+.container
+  %form(data-persist="garlic" id='frmBuilder')
+    = partial('builder/partials/body') 
+    = partial('builder/partials/neck') 
+    = partial('builder/partials/preview')  
 
-  %a(name="preview") 
-  %fieldset(id="fsPreview")   
-    %legend Preview
-    - data.build.body.each do |body|
-      %p 
-        %label=body.title  
-        \: 
-        %span(id="value-#{id_for(body.title)}")
-    - data.build.neck.each do |neck|
-      %p 
-        %label=neck.title   
-        \:
-        %span(id="value-#{id_for(neck.title)}")        
-  
-  %p
-    %button(type='submit'  class='btn btn-success btn-block') 
-      Copy and/or Send  
+    .row 
+      .col-md-6
+        %button(type='submit'  class='btn btn-success btn-block' id='btnSend') 
+          Send Via Email  
+      
+      .col-md-6
+        %button(type='submit'  class='btn btn-success btn-block' id='btnCopy') 
+          Copy JSON 
+    .row
+      %p
+      .alert.alert-success
+        If your browser supports it, a copy is saved locally. So you can come back and start building again and your build 
+        %b should
+        be saved.      
 
 :css
   .navbar-brand img{
@@ -40,8 +30,13 @@
   }
   body{
     padding-top:60px;
+    position: relative;
   }
-  .form-group{
-  border-bottom:1px solid #ccc;
+
+  @media (max-width: 480px) {
+   .form-group{
+     border-bottom:1px solid #eee;
+    } 
+
   }
 

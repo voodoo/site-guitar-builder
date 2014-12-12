@@ -1,2 +1,14 @@
-= partial("builder/partials/page", locals: {title: "Preview"}) do
-  Preview
+%a(name="preview") 
+%fieldset(id="preview")
+  %legend Preview
+  #fsPreview
+    %h3 Body
+    - data.build.body.each do |body|
+      %p 
+        %label= "#{body.title}:" 
+        %span(id="value-#{id_for(body.title)}")
+    %h3 Neck
+    - data.build.neck.each do |neck|
+      %p 
+        %label= "#{neck.title}:"    
+        %span(id="value-#{id_for(neck.title)}") 
