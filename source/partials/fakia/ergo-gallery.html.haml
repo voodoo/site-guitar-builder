@@ -16,4 +16,4 @@
       - %w[30singlemiddle 45leftsingle 45middlesingle 55].each do |img|
         .col-md-3{"data-sr" => "wait 0.4s and then ease-in-out 100px"}
           %a.swipebox{:href => "/img/shark/angles/#{img}.png", :title => img}
-            %img.img-responsive{:src => "/img/shark/angles/#{img}.png"}/
+            = image_tag "/img/shark/angles/#{img}.png", class: 'img-responsive'
