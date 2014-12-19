@@ -66,8 +66,8 @@ $(window).load(function () {
 /* ::::::: Backstrech ::::::: */
 /* ========================== */
 // You may also attach Backstretch to a block-level element
-$("header").backstretch("/img/shark/bg/sea.jpg");
-$("#scene").backstretch("/img/shark/bg/wood.png");
+$("header").backstretch("<%= url_for("/img/shark/bg/sea.jpg") %>");
+$("#scene").backstretch("<%= url_for("/img/shark/bg/wood.png") %>");
 
 </script>
 
