@@ -10,7 +10,7 @@
             on hand ready for purchase
       - data.galleries[:stock].each do |k,v|
         .col-md-3{"data-sr" => "wait 0.4s and then ease-in-out 100px"}
-          %a.swipebox{:href => "/img/shark/galleries/stock/#{k}.png", :title => v}
+          = link_to("/img/shark/galleries/stock/#{k}.png", :title => v, class: :swipebox) do
             = v
             = image_tag "/img/shark/galleries/stock/#{k}.png", class: 'img-responsive'                  
 
