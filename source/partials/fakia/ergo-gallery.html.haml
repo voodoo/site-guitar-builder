@@ -13,7 +13,7 @@
           %p.col-md-6.col-md-offset-3{"data-sr" => "wait 0.4s and then ease-in-out 100px"}
             multiple ergonomic angles
             
-      - %w[30singlemiddle 45leftsingle 45middlesingle 55].each do |img|
+      - %w[30 30middle 45 45wide].each do |img|
         .col-md-3{"data-sr" => "wait 0.4s and then ease-in-out 100px"}
           = link_to("/img/shark/angles/#{img}.png", :title => img, class: :swipebox) do
             = image_tag "/img/shark/angles/#{img}.png", class: 'img-responsive'

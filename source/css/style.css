@@ -154,6 +154,13 @@ p a:hover {
     border-top: 1px solid #333;
     border-bottom: 1px solid #333
 }
+/* BG Color */
+ .bg-light-grey {
+    background-color: #666;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd
+}
+
 /* END BG Color */
 
 /* Title */
