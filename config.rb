@@ -3,6 +3,10 @@ set :js_dir,      'js'
 set :images_dir,  'img'
 activate :directory_indexes
 
+with_layout :builder do
+  page "/builder/*"
+end
+
 # Use relative URLs
 activate :relative_assets
 

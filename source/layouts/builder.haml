@@ -7,16 +7,15 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     %meta{:content => "", :name => "author"}
     %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:300,400,700", :rel => "stylesheet", :type => "text/css"}
-    %link{:href => "/images/logo.png", :rel => "shortcut icon", :type => "image/x-icon"}/
+    %link{:href => url_for("/images/logo.png"), :rel => "shortcut icon", :type => "image/x-icon"}/
     = stylesheet_link_tag "bootstrap.min"
     %script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
     %script(src="/javascripts/jq-hash-serialize.js")
 
   %body(data-spy="scroll" data-target=".navbar-default")
     %a(name="builder")
-      #builder
-      .container= yield
-    %script(src="/js/bootstrap.min.js")
-    %script(src="/javascripts/garlic.min.js")
-    %script(src="/javascripts/builder.js")
+    #builder
+    .container= yield
+    = javascript_include_tag "/js/bootstrap.min.js","/javascripts/garlic.min.js", "/javascripts/builder.js", "/javascripts/preview.js"
+
 
