@@ -78,7 +78,7 @@ body:
 # --------------------------------------- NECK -------------------------------------
 neck: 
   - 
-    title: Fretboard material
+    title: Fretboard wood
     options:
       - Ebony
       - Maple
@@ -105,8 +105,8 @@ neck:
   - 
     title: Number of frets
     options:
-      - "22"
-      - "24"
+      - 22
+      - 24
   - 
     title: Fret material
     options:
@@ -136,6 +136,12 @@ head:
       - Pointed
       - None      
   - 
+    title: Tuners
+    options:
+      - Sperzel
+      - Steinberger
+      - Gotoh
+  - 
     title: Tuner placement
     options:
       - 6 inline
@@ -143,12 +149,7 @@ head:
       - 4 x 2
     hint: Where the tuners will reside on the head
     help: Make sure the shape will accomodate them 
-  - 
-    title: Tuners
-    options:
-      - Sperzel
-      - Steinberger
-      - Gotoh
+
 # woods: &WOODS
 #   - Walnut
 #   - Mahagony

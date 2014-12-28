@@ -3,25 +3,12 @@ $(function(){
   var $l = console.log.bind(console);
 
   $("body").tooltip({ selector: '[data-toggle=tooltip]' });
-  
-  // function parseParams(){
-  //   var params = {};
-  //   var match,
-  //       pl     = /\+/g,  // Regex for replacing addition symbol with a space
-  //       search = /([^&=]+)=?([^&]*)/g,
-  //       decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-  //       query  = window.location.search.substring(1);
 
-  //   while (match = search.exec(query))
-  //      params[decode(match[1])] = decode(match[2]);
-
-  //   return params
-
-  // }
-
+  // Set global build var  
   function setBuild(build){
     $BUILD = build.toLowerCase()
   }
+
   // From url
   function initForm(){
     var f = document.forms.frmBuilder
@@ -103,7 +90,17 @@ $(function(){
   // })  
 
   function setBookmarklet(){
-    $('.aBookmarklet').attr('href', "?" + $('#frmBuilder').serialize())
+    var serial = $("#frmBuilder").serialize()
+    // TODO: Optimize
+    // var h = $("#frmBuilder").serializeHash()
+    // var hc = {}
+    // $.each(h, function(k,v){
+    //   if(v != '') hc[k] = v
+    // })
+    // $l(hc.serialize())
+    //var serial = $("#frmBuilder").serialize()
+    //$l(serial.length)
+    $('.aBookmarklet').attr('href', "?" + serial)
   }
 
   // Form changes

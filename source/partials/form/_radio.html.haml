@@ -12,7 +12,7 @@
           %input{id: id, :checked => (1 if idx.zero?), :name => id_for(section_title), :type => "radio", :value => option}
 
             = option
-          - if title == 'Body Shape'
+          - if section == 'body' && title == 'Shape'
             %div= image_tag "/img/shark/builds/#{option.downcase}/#{option.downcase}.png"
 
     - id = "#{id_for(section_title)}-other"

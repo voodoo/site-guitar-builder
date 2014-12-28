@@ -1,5 +1,0 @@
-%fieldset
-  %h2 Great White Options
-  - build_for(:gw).each do |build|
-    = partial('partials/form/radio', locals: build )
-  = partial('partials/form/text', locals: {title: 'Great white Details', hint: 'Additonal details'} )

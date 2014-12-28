@@ -1,5 +1,30 @@
-/ *** Preload the Whole Page ***
-#preloader
-  #loading-animation &nbsp;
-= partial("partials/nav")
-= partial("partials/shark/index")
+%h1 
+  Build
+  %small.text-muted 
+    any guitar
+#divPreview.hidden-xs.hidden-sm
+  = image_tag "/img/shark/builds/manta/body.png", id: "img-body", class: 'img-responsive'
+  = image_tag "/img/shark/builds/manta/cap.png", id: "img-cap", class: 'img-responsive'
+  = image_tag "/img/shark/builds/manta/neck.png", id: "img-neck", class: 'img-responsive'
+  = image_tag "/img/shark/builds/manta/head.png", id: "img-head", class: 'img-responsive'
+  = image_tag "/img/shark/builds/manta/hw.png", id: "img-hw", class: 'img-responsive'
+
+.row
+  %form(data-persist="garlic" id='frmBuilder')
+    - %w[body neck head].each do |section|
+      .col-lg-4.col-md-6.col-sm-12= partial('partials/builder/section', locals: {section: section}) 
+.row
+  .col-lg-12= partial('partials/builder/preview')  
+.row 
+  .col-md-6
+    %button(type='submit'  class='btn btn-success btn-block' id='btnSend') 
+      Send Via Email  
+  
+  .col-md-6
+    %button(type='submit'  class='btn btn-success btn-block' id='btnCopy') 
+      Copy JSON 
+.row
+  .alert.alert-success
+    If your browser supports it, a copy is saved locally. So you can come back and start building again and your build 
+    %b should
+    be saved.      
