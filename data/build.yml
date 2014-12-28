@@ -1,77 +1,89 @@
 body:
+  -
+   title: Shape
+   options: 
+     - Manta
+     - Shark
+     # - Firebird
+     # - Strat
+   hint: Or design your own! 
+   help:  
+   st: "Sharktail Guitars are smaller than normal (Manta, Shark)."
+
+  -
+   title: Wood
+   options:
+    - Walnut
+    - Mahagony
+   hint: The top piece - cap / pickguard
+   help: Any wood you like 
+
+  -
+   title: Accent Wood
+   options:
+    - Walnut
+    - Mahagony
+    - Maple
+    - Paduk
+    - Koa   
+   hint: The top piece - cap / pickguard
+   help: Any wood you like 
+
   - 
-   title: Body Size
+   title: Size
    options: 
      - Normal
      - Petite
      - Large
-   hint: Sharktail Guitars are smaller than normal
-   help: You can create the size that is best for you
-  -
-   title: Body Shape
-   options: 
-     - Shark
-     - Strat
-     - Tele
-     - Wolf
-   hint: Modern or traditional
-   help: Or design your own!  
+   hint: You can create the size that is best for you
+   help: 
+   st: "The size of the Manta, in particular, is important. See how it fits on your lap."
+
   -
    title: Bridge type
    options: 
      - Tremolo
      - Fixed
   -
-   title: Bridge brand
+   title: Bridge Brand
    options: 
+     - Kahler
      - Floyd Rose
-     - Kahler   
+
+  - 
+   title: Bridge Tailpiece
+   options: 
+     - Hipshot
+     - Tunomatic
+     - None
+  -
+   title: Bridge Pickup
+   options: 
+     - Seymore Duncan
+     - Lace
 
   -
-   title: Bridge material
+   title: Neck Pickup
+   options: 
+     - Seymore Duncan
+     - Lace
+
+  -
+   title: Hardware Material
    options: 
      - Gold
      - Chrome
      - Black
 
-  -
-   title: Accent Wood
-   options: 
-     - Maple
-     - Paduk
-     - Mahagony
-     - Walnut
-     - Koa
-   hint: The top piece - cap / pickguard
-   help: Any wood you like 
-  -
-   title: Accent Color
-   options: 
-     - Natural
-     - Red
-     - Blue
-     - Green
-   hint: The color of the top figured wood
-   help:     
-  - 
-   title: Base Wood
-   options: 
-     - Walnut
-     - Mahagony
-     - Swamp Ash
-   hint: The wood the wings are made out of
-   help:  
-  - 
-   title: Base Color
-   options: 
-     - Natural
-     - Red
-     - Blue
-     - Green
-   hint: The color of the base wood
-   help:     
 # --------------------------------------- NECK -------------------------------------
 neck: 
+  - 
+    title: Fretboard material
+    options:
+      - Ebony
+      - Maple
+      - Walnut
+      - Figured Maple
   -
    title: Scale length
    options: 
@@ -79,49 +91,17 @@ neck:
      - "24.75"
    hint: Size from nut to bridge
    help: Longer armed people like the longer scale 
+
   - 
    title: Neck through wood
    options: 
-     - Walnut - Mahagony
-     - Mahagony - Maple
+     - Walnut/Mahagony
+     - Mahagony/Maple
+     - Walnut/Maple
    hint: Not a bolt on
-   help: The 5 1/2 pieces of wood make up the neck through
-  - 
-    title: Fretboard wood
-    options:
-      - Ebony
-      - Maple
-  - 
-    title: Tuners
-    options:
-      - Sperzel
-      - Steinberger
-      - Gotoh
-    hint:     
-    help:   
-  -
-   title: Tuner material
-   options: 
-     - Gold
-     - Chrome
-     - Black      
-  - 
-    title: Head shape
-    options:
-      - Sharktail
-      - Strat
-      - Tele
-      - None
-    hint: Choose none for a headless
-    help: If you want tuners on the body we can make the head a prop  
-  - 
-    title: Tuner placement
-    options:
-      - 6 inline
-      - 3 x 3
-      - 4 x 2
-    hint: Where the tuners will reside on the head
-    help: Make sure the shape will accomodate them 
+
+   st: Sharktail guitars are neck throughs - make up of 5 1/2 inch pieces
+
   - 
     title: Number of frets
     options:
@@ -140,4 +120,39 @@ neck:
       - Jumbo
       - Medium
       - Medium/Jumbo
-     
+# --------------------------------------- HEAD -------------------------------------
+
+head: 
+  - 
+    title: Wood
+    options:
+      - Walnut
+      - Maple
+      - None
+  - 
+    title: Shape
+    options:
+      - Sharktail
+      - Pointed
+      - None      
+  - 
+    title: Tuner placement
+    options:
+      - 6 inline
+      - 3 x 3
+      - 4 x 2
+    hint: Where the tuners will reside on the head
+    help: Make sure the shape will accomodate them 
+  - 
+    title: Tuners
+    options:
+      - Sperzel
+      - Steinberger
+      - Gotoh
+# woods: &WOODS
+#   - Walnut
+#   - Mahagony
+#   - Maple
+#   - Paduk
+#   - Koa
+      

@@ -109,6 +109,6 @@ module BuildHelpers
 	end
 
 	def id_for title
-		parameterize(title)
+		parameterize(title).gsub('-','_')
 	end
 end

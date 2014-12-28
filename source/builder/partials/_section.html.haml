@@ -1,0 +1,5 @@
+%a(name=section)
+%fieldset(id=section)   
+  %legend= section.capitalize
+  - data.build[section].each do |which|
+    = partial('partials/form/radio', locals: which.merge(section: section))
