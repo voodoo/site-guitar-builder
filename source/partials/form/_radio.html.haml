@@ -1,6 +1,6 @@
-.row.form-group
+.row.form-group{"data-wood" => locals[:wood]}
   .col-sm-3
-    %label.control-label{:for => "radios"}
+    %label.control-label
       =title
       /=section
       -section_title = section + "_" + title
@@ -13,7 +13,7 @@
 
             = option
           - if section == 'body' && title == 'Shape'
-            %div= image_tag "/img/shark/builds/#{option.downcase}/#{option.downcase}.png"
+            %div= image_tag "/img/builds/#{option.downcase}/#{option.downcase}.png"
 
     - id = "#{id_for(section_title)}-other"
     .radio
@@ -24,7 +24,7 @@
         %input{id: id + '-value', :name => (id_for(section_title) + "-other-value"), :type => "text", :placeholder => "Other Value"}
     
     - if locals[:st]
-      = image_tag '/img/shark/etc/icon-tail.png', title: locals[:st], 'data-toggle' => 'tooltip', style: 'float:left;width:40px'
+      = image_tag '/img/etc/icon-tail.png', title: locals[:st], 'data-toggle' => 'tooltip', style: 'float:left;width:40px'
     .text-muted= locals[:hint]
 
   / .col-sm-6

@@ -5,15 +5,15 @@
   }
   #divPreview{
   position:relative;
-  height: 368px;
-  width:1000px;
+  height: 431px;
+  width:1024px;
   }
   #divPreview img{
   position:absolute;
   left:0;
   top:0;
-  height: 368px;
-  width:1000px;
+  height: 431px;
+  width:1024px;
   } 
 
   .form-group{

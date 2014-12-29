@@ -4,8 +4,6 @@ body:
    options: 
      - Manta
      - Shark
-     # - Firebird
-     # - Strat
    hint: Or design your own! 
    help:  
    st: "Sharktail Guitars are smaller than normal (Manta, Shark)."
@@ -14,20 +12,27 @@ body:
    title: Wood
    options:
     - Walnut
-    - Mahagony
+    - Mahogany
+    - Alder
+
    hint: The top piece - cap / pickguard
    help: Any wood you like 
+   wood: body
 
   -
    title: Accent Wood
    options:
-    - Walnut
-    - Mahagony
     - Maple
-    - Paduk
-    - Koa   
+    - Spalted maple
+    - Birdseye maple
+    - Figured maple
+    # - Exotic
+    # - Tiger
+    # - Paduk
+    # - Koa   
    hint: The top piece - cap / pickguard
    help: Any wood you like 
+   wood: cap
 
   - 
    title: Size
@@ -71,19 +76,20 @@ body:
   -
    title: Hardware Material
    options: 
-     - Gold
      - Chrome
+     - Gold
      - Black
+   wood: hw
 
 # --------------------------------------- NECK -------------------------------------
 neck: 
   - 
     title: Fretboard wood
     options:
-      - Ebony
-      - Maple
       - Walnut
-      - Figured Maple
+      - Rosewood
+      - Birdseye Maple
+    wood: neck
   -
    title: Scale length
    options: 
@@ -129,6 +135,7 @@ head:
       - Walnut
       - Maple
       - None
+    wood: head
   - 
     title: Shape
     options:

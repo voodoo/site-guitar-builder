@@ -11,7 +11,8 @@
     = stylesheet_link_tag "all"
     = javascript_include_tag "all"
     
-  %body(data-spy="scroll" data-target=".navbar-default")
+  %body
+    /(data-spy="scroll" data-target=".navbar-default")
     / *** START NAVIGATION ***
     %nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
       .navbar-inner
@@ -23,7 +24,7 @@
             %span.icon-bar
             %span.icon-bar
           %a.navbar-brand{"data-scroll" => "", :href => "/"}
-            %img{:src => url_for("/img/shark/logo/small.png"), class: 'img-responsive'}
+            %img{:src => url_for("/img/logo/small.png"), class: 'img-responsive'}
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
