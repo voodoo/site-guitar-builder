@@ -1,5 +1,5 @@
 $(function(){
-  // show hide overlay of scale
+  // show/hide overlay of scale
   $('#aGuide').on('click', function(){
     $('#img-scale').toggle()
   })
@@ -9,14 +9,21 @@ $(function(){
     var x = e.offsetX;
     if(x < 250){
       setNextWoodFor('body')
-    } else if (x > 250 && x < 450) {
+    } else if (x > 250 && x < 550) {
       setNextWoodFor('cap')
-    } else if (x > 450 && x < 900) {
+    } else if (x > 500 && x < 750) {
       setNextWoodFor('neck');
     } else {
       setNextWoodFor('head')
     }
   })
+
+  $('.layer .piece').on('mouseover', function(){
+    $(this).css('opacity', '.1')
+  })
+  $('.layer .piece').on('mouseout', function(){
+    $(this).css('opacity', '0')
+  })  
 
   // When Preview is checked
   function setNextWoodFor(part){

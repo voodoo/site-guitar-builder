@@ -26,6 +26,7 @@ body:
     - Spalted maple
     - Birdseye maple
     - Figured maple
+    - Walnut
     # - Exotic
     # - Tiger
     # - Paduk
@@ -80,7 +81,7 @@ body:
    title: Hardware Material
    options: 
      - Chrome
-     - Gold
+     #- Gold
      - Black
    wood: hw
 
@@ -137,6 +138,8 @@ head:
     options:
       - Walnut
       - Maple
+      - Spalted Maple
+      - Birdseye Maple
       - None
     wood: head
   - 

@@ -1,9 +1,17 @@
 $(function(){
 
+  function uiUpdate(which, wood){
+    $('#uiUpdate').html("<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b")
+    setTimeout(function(){
+      if($('#uiUpdate').html() != ''){
+        $('#uiUpdate').html('')
+      }
+    },3000)
+  }
 
   // Form changes
   $('#frmBuilder input').on('click', function(t){
-    log('frmBuilder input clicked = ' + $(this).val())
+    //log('frmBuilder input clicked = ' + $(this).val())
     
     var name = $(this).attr('name')
     var val  = $(this).val()
@@ -15,13 +23,14 @@ $(function(){
     }
     setBookmarklet()
 
-    var wood = $(this).parents('.form-group').data('wood')
-    if(wood){ // Wood needs changing?
-      var which = $(this).val().toLowerCase().replace(/\s/g, '_')
-      var img   = document.getElementById('img-' + wood)
-      var src   =  $PATH + $BUILD + "/" + wood + "/" + which + ".png"  
+    var which = $(this).parents('.form-group').data('wood')
+    if(which){ // Wood needs changing?
+      var wood = $(this).val().toLowerCase().replace(/\s/g, '_')
+      var img   = document.getElementById('img-' + which)
+      var src   =  $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
       img.src   = src    
-      $('#aWood').attr('href', src).text(wood + " changed to " + which)
+      //$('#aWood').attr('href', src).text(wood + " changed to " + which)
+      uiUpdate(which, wood)
       img.onerror = function(){
         //console.warn(this.src + " NOT FOUND")
         this.src = $PATH + "blank.png"
@@ -96,13 +105,20 @@ $(function(){
 
 
   initForm() 
+  initWoodParts()
 
-  if(params["body_shape"]){
-    setTimeout(initWoodParts, 1000)
-  } else {
+  $('#uiUpdate').hide()
+
+  setTimeout(function(){
+    $('#uiUpdate').show()
+  },2000)
+
+  // if(params["body_shape"]){
+  //   setTimeout(initWoodParts, 1000)
+  // } else {
     
-    initWoodParts()
-  }
+  //   initWoodParts()
+  // }
    
 
 })
