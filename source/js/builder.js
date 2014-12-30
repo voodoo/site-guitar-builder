@@ -3,6 +3,7 @@ $(function(){
 
   // Form changes
   $('#frmBuilder input').on('click', function(t){
+    log('frmBuilder input clicked = ' + $(this).val())
     
     var name = $(this).attr('name')
     var val  = $(this).val()
@@ -20,7 +21,7 @@ $(function(){
       var img   = document.getElementById('img-' + wood)
       var src   =  $PATH + $BUILD + "/" + wood + "/" + which + ".png"  
       img.src   = src    
-      $('#aWood').attr('href', src).text(which)
+      $('#aWood').attr('href', src).text(wood + " changed to " + which)
       img.onerror = function(){
         //console.warn(this.src + " NOT FOUND")
         this.src = $PATH + "blank.png"
@@ -50,7 +51,7 @@ $(function(){
 
   // From url
   function initForm(){
-    $l('inity form')
+    log('init form')
     var f = document.forms.frmBuilder
     $.each(params, function(k,v){
       if(f[k]){
@@ -66,7 +67,7 @@ $(function(){
 
   // REinit parts for build
   function initWoodParts(){
-    $l('wood parts')
+    log('wood parts')
     
     if($BUILD == 'other'){
       $('#divPreviewContainer').hide()

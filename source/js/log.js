@@ -7,6 +7,6 @@ function log(){
 }
 $(function(){
 	$('#aLog').on('click', function(){
-		$('#logContainer').toggle()
+		$('logContainer').toggle()
 	})
 })

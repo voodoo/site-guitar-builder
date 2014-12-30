@@ -1,16 +1,22 @@
+.btn-group.pull-right(role="group")      
+  %button{type: :button, class: 'btn btn-default', :id => "aLog"} Log
+  %a{class: 'btn btn-default', :id => "aWood"} Wood
 %h1 
   Build
   %small.text-muted 
     any guitar
 
+#logContainer(style='display:none')
+
 #divPreviewContainer
   .row
     .col-lg-12
       .pull-right
-        %a{:id => "aWood"}
-        %a{:id => "aGuide"}
-          %i.fa.fa-file-image-o
-          Guide
+        .btn-group(role="group")      
+          %button{type: :button, class: 'btn btn-default', :id => "aGuide"}     
+            %i.fa.fa-file-image-o
+            Guide
+      
 
   #divPreview.hidden-xs.hidden-sm
     = image_tag "/img/builds/blank.png", id: "img-body", class: 'img-responsive'
@@ -44,5 +50,13 @@
     be saved. 
 
 %script
-  $builds = 
-  = data.build.to_json     
+/ //$builds = 
+/ //= data.build.to_json     
+/ / html2canvas(document.getElementById('divPreview'), {
+/ / onrendered: function(canvas) {
+/ / document.body.appendChild(canvas);
+/ / }
+/ //,
+/ //width: 300,
+/ //height: 300
+/ });
