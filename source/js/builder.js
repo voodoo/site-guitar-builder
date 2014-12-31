@@ -1,7 +1,8 @@
 $(function(){
 
-  function uiUpdate(which, wood){
-    $('#uiUpdate').html("<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b")
+  function uiUpdate(which, wood, error){
+    var sError = error ? '<span style="color:firebrick">[ERROR]</span> ' : ''
+    $('#uiUpdate').html(sError + "<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b")
     setTimeout(function(){
       if($('#uiUpdate').html() != ''){
         $('#uiUpdate').html('')
@@ -9,12 +10,15 @@ $(function(){
     },3000)
   }
 
+
+
   // Form changes
   $('#frmBuilder input').on('click', function(t){
     //log('frmBuilder input clicked = ' + $(this).val())
     
     var name = $(this).attr('name')
     var val  = $(this).val()
+    var isOther = (this.className.indexOf('other') != -1)
 
     if( name == 'body_shape'){
       //Change the BUILD
@@ -24,18 +28,52 @@ $(function(){
     setBookmarklet()
 
     var which = $(this).parents('.form-group').data('wood')
-    if(which){ // Wood needs changing?
+    if(which && !isOther){ // Wood needs changing?
       var wood = $(this).val().toLowerCase().replace(/\s/g, '_')
-      var img   = document.getElementById('img-' + which)
-      var src   =  $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
-      img.src   = src    
-      //$('#aWood').attr('href', src).text(wood + " changed to " + which)
-      uiUpdate(which, wood)
-      img.onerror = function(){
-        //console.warn(this.src + " NOT FOUND")
-        this.src = $PATH + "blank.png"
+        if(true){//wood != 'none'
+        var img   = document.getElementById('img-' + which)
+        if(wood == 'none'){
+          var src   =  $PATH + "blank.png" 
+        } else {
+          var src   =  $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
+        }
+        
+        //try{img.src   = src} catch(e) {$l(e)}
+        //$('#aWood').attr('href', src).text(wood + " changed to " + which)
+        img.src      = src
+        img.hadError = false
+        img.onerror = function(){
+          this.hadError = true
+          //console.warn(this.src + " NOT FOUND")
+          this.src = $PATH + "blank.png"
+        }
+        img.onload = function(){
+          if(!this.hadError){
+            uiUpdate(which, wood)
+          } else {
+            uiUpdate(which , wood, 1)
+          }
+        }        
       }
-    }
+    }     
+
+    // Show or hide other text field
+    var divOtherValue = $(this).parents('.form-group').find('.other-value')
+    if(isOther) {   
+
+      divOtherValue.show()   
+
+      $(divOtherValue).find('.other-value').select()
+
+    } else {
+      if(this.name.indexOf('other') == -1){
+        divOtherValue.hide() 
+        $(divOtherValue).find('.other-value').val('')
+      }
+        
+    }        
+    
+   
   })
 
   function setBookmarklet(){
@@ -64,14 +102,16 @@ $(function(){
     var f = document.forms.frmBuilder
     $.each(params, function(k,v){
       if(f[k]){
-        //$l(k,v)
-        //$l(f[k].value)
-        //f[k].value = v
-        f[k].value = v
-        $(f[k]).trigger('change')
+        f[k].value = decodeURIComponent(v).replace(/\+/g, ' ')
+        //$(f[k]).trigger('change')
+      }        
+    }) 
+
+    $.each($('.input-other-value'), function(){
+      if(this.value != ''){
+        $(this).parent('.other-value').show()
       }
-        
-    })  
+    })
   }
 
   // REinit parts for build

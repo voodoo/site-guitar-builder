@@ -1,4 +1,6 @@
-
+- content_for :nav, partial("partials/builder/nav")
+- content_for :head do
+  = javascript_include_tag "all"
 %h1 
   Build
   %small.text-muted 
@@ -7,8 +9,8 @@
 #divPreviewContainer
   .row
     .col-lg-12
-      .pull-right
-        %span#uiUpdate
+      %span#uiUpdate
+      .pull-right        
         .btn-group(role="group")      
           %button{type: :button, class: 'btn btn-default', :id => "aGuide"}     
             %i.fa.fa-file-image-o
@@ -22,11 +24,6 @@
     = image_tag "/img/builds/blank.png", id: "img-head", class: 'img-responsive'
     = image_tag "/img/builds/blank.png", id: "img-hw", class: 'img-responsive'
     = image_tag "/img/builds/scale.png", id: "img-scale", class: 'img-responsive', style: 'display:none'
-    / .layer 
-    /   .piece.body
-    /   .piece.cap
-    /   .piece.neck
-    /   .piece.head
 
 
 
@@ -35,39 +32,9 @@
   %form(data-persist="garlic" id='frmBuilder')
     - %w[body neck head].each do |section|
       .col-lg-4.col-md-6.col-sm-12= partial('partials/builder/section', locals: {section: section}) 
-/ .row
-/   .col-lg-12= partial('partials/builder/preview')  
-
-/ .row 
-/   .col-md-6
-/     %button(type='submit'  class='btn btn-success btn-block' id='btnSend') 
-/       Send Via Email  
-  
-/   .col-md-6
-/     %button(type='submit'  class='btn btn-success btn-block' id='btnCopy') 
-/       Copy JSON 
-/ .row
-/   .alert.alert-success
-/     If your browser supports it, a copy is saved locally. So you can come back and start building again and your build 
-/     %b should
-/     be saved. 
 
 .row
-  .btn-group.pull-right(role="group")      
+  .btn-group(role="group")      
     %button{type: :button, class: 'btn btn-default', :id => "aLog"} Log
-    /%a{class: 'btn btn-default', :id => "aWood"} Wood
-
   #logContainer(style='display:none')
-
-
-%script
-/ //$builds = 
-/ //= data.build.to_json     
-/ / html2canvas(document.getElementById('divPreview'), {
-/ / onrendered: function(canvas) {
-/ / document.body.appendChild(canvas);
-/ / }
-/ //,
-/ //width: 300,
-/ //height: 300
-/ });
+%p

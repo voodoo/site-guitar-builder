@@ -34,7 +34,7 @@ $(function(){
     // Have the .radio - now get the input
     var nxt   = rdo.next().find('input')
     // If the next radio is not 'other'
-    if(nxt &&  nxt.attr('id').indexOf('other') == -1){
+    if(nxt.length != 0 &&  $(nxt).attr('name').indexOf('other') == -1){
       nxt.click()
     } else{
       // Check the first one

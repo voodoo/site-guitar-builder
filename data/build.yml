@@ -46,6 +46,14 @@ body:
    st: "The size of the Manta, in particular, is important. See how it fits on your lap."
 
   -
+   title: Hardware Material
+   options: 
+     - Chrome
+     #- Gold
+     - Black
+   wood: hw
+   
+  -
    title: Bridge type
    options: 
      - Fixed
@@ -77,19 +85,12 @@ body:
      - Seymour Duncan
      - Lace
 
-  -
-   title: Hardware Material
-   options: 
-     - Chrome
-     #- Gold
-     - Black
-   wood: hw
-
 # --------------------------------------- NECK -------------------------------------
 neck: 
   - 
     title: Fretboard wood
     options:
+      - Ebony
       - Walnut
       - Rosewood
       - Birdseye Maple
@@ -136,18 +137,20 @@ head:
   - 
     title: Wood
     options:
+      - None
       - Walnut
       - Maple
       - Spalted Maple
       - Birdseye Maple
-      - None
     wood: head
+    st: The tuners on Sharktail guitars are on the body so the head is just a prop.
   - 
     title: Shape
     options:
       - Sharktail
       - Pointed
       - None      
+    st: The tuners on Sharktail guitars are on the body so the head is just a prop.
   - 
     title: Tuners
     options:

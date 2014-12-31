@@ -3,7 +3,10 @@
     %label.control-label
       =title
       /=section
-      -section_title = section + "_" + title
+    - if locals[:st]
+      %div= image_tag '/img/etc/icon-tail.png', title: locals[:st], 'data-toggle' => 'tooltip', style: 'width:40px'      
+    
+    -section_title = section + "_" + title
   .col-sm-9
     - options.each_with_index do |option, idx|
       .radio
@@ -21,10 +24,9 @@
         %input{id: id, :name => id_for(section_title), :type => "radio", value: "OTHER", class: 'other'}
           Other 
       .other-value(style="display:none;padding-left:16px")   
-        %input{id: id + '-value', :name => (id_for(section_title) + "-other-value"), :type => "text", :placeholder => "Other Value"}
+        %input{id: id + '-value', :name => (id_for(section_title) + "-other-value"), :type => "text", :placeholder => "Other Value", class: 'input-other-value'}
     
-    - if locals[:st]
-      = image_tag '/img/etc/icon-tail.png', title: locals[:st], 'data-toggle' => 'tooltip', style: 'float:left;width:40px'
+
     .text-muted= locals[:hint]
 
   / .col-sm-6
