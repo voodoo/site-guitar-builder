@@ -8,8 +8,9 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 }(jQuery),+function(a){"use strict";function b(b){return this.each(function(){var d=a(this),e=d.data("bs.affix"),f="object"==typeof b&&b;e||d.data("bs.affix",e=new c(this,f)),"string"==typeof b&&e[b]()})}var c=function(b,d){this.options=a.extend({},c.DEFAULTS,d),this.$target=a(this.options.target).on("scroll.bs.affix.data-api",a.proxy(this.checkPosition,this)).on("click.bs.affix.data-api",a.proxy(this.checkPositionWithEventLoop,this)),this.$element=a(b),this.affixed=this.unpin=this.pinnedOffset=null,this.checkPosition()};c.VERSION="3.3.0",c.RESET="affix affix-top affix-bottom",c.DEFAULTS={offset:0,target:window},c.prototype.getState=function(a,b,c,d){var e=this.$target.scrollTop(),f=this.$element.offset(),g=this.$target.height();if(null!=c&&"top"==this.affixed)return c>e?"top":!1;if("bottom"==this.affixed)return null!=c?e+this.unpin<=f.top?!1:"bottom":a-d>=e+g?!1:"bottom";var h=null==this.affixed,i=h?e:f.top,j=h?g:b;return null!=c&&c>=i?"top":null!=d&&i+j>=a-d?"bottom":!1},c.prototype.getPinnedOffset=function(){if(this.pinnedOffset)return this.pinnedOffset;this.$element.removeClass(c.RESET).addClass("affix");var a=this.$target.scrollTop(),b=this.$element.offset();return this.pinnedOffset=b.top-a},c.prototype.checkPositionWithEventLoop=function(){setTimeout(a.proxy(this.checkPosition,this),1)},c.prototype.checkPosition=function(){if(this.$element.is(":visible")){var b=this.$element.height(),d=this.options.offset,e=d.top,f=d.bottom,g=a("body").height();"object"!=typeof d&&(f=e=d),"function"==typeof e&&(e=d.top(this.$element)),"function"==typeof f&&(f=d.bottom(this.$element));var h=this.getState(g,b,e,f);if(this.affixed!=h){null!=this.unpin&&this.$element.css("top","");var i="affix"+(h?"-"+h:""),j=a.Event(i+".bs.affix");if(this.$element.trigger(j),j.isDefaultPrevented())return;this.affixed=h,this.unpin="bottom"==h?this.getPinnedOffset():null,this.$element.removeClass(c.RESET).addClass(i).trigger(i.replace("affix","affixed")+".bs.affix")}"bottom"==h&&this.$element.offset({top:g-b-f})}};var d=a.fn.affix;a.fn.affix=b,a.fn.affix.Constructor=c,a.fn.affix.noConflict=function(){return a.fn.affix=d,this},a(window).on("load",function(){a('[data-spy="affix"]').each(function(){var c=a(this),d=c.data();d.offset=d.offset||{},null!=d.offsetBottom&&(d.offset.bottom=d.offsetBottom),null!=d.offsetTop&&(d.offset.top=d.offsetTop),b.call(c,d)})})}(jQuery);
 $(function(){
 
-  function uiUpdate(which, wood){
-    $('#uiUpdate').html("<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b")
+  function uiUpdate(which, wood, error){
+    var sError = error ? '<span style="color:firebrick">[ERROR]</span> ' : ''
+    $('#uiUpdate').html(sError + "<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b")
     setTimeout(function(){
       if($('#uiUpdate').html() != ''){
         $('#uiUpdate').html('')
@@ -17,12 +18,15 @@ $(function(){
     },3000)
   }
 
+
+
   // Form changes
   $('#frmBuilder input').on('click', function(t){
     //log('frmBuilder input clicked = ' + $(this).val())
     
     var name = $(this).attr('name')
     var val  = $(this).val()
+    var isOther = (this.className.indexOf('other') != -1)
 
     if( name == 'body_shape'){
       //Change the BUILD
@@ -32,18 +36,52 @@ $(function(){
     setBookmarklet()
 
     var which = $(this).parents('.form-group').data('wood')
-    if(which){ // Wood needs changing?
+    if(which && !isOther){ // Wood needs changing?
       var wood = $(this).val().toLowerCase().replace(/\s/g, '_')
-      var img   = document.getElementById('img-' + which)
-      var src   =  $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
-      img.src   = src    
-      //$('#aWood').attr('href', src).text(wood + " changed to " + which)
-      uiUpdate(which, wood)
-      img.onerror = function(){
-        //console.warn(this.src + " NOT FOUND")
-        this.src = $PATH + "blank.png"
+        if(true){//wood != 'none'
+        var img   = document.getElementById('img-' + which)
+        if(wood == 'none'){
+          var src   =  $PATH + "blank.png" 
+        } else {
+          var src   =  $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
+        }
+        
+        //try{img.src   = src} catch(e) {$l(e)}
+        //$('#aWood').attr('href', src).text(wood + " changed to " + which)
+        img.src      = src
+        img.hadError = false
+        img.onerror = function(){
+          this.hadError = true
+          //console.warn(this.src + " NOT FOUND")
+          this.src = $PATH + "blank.png"
+        }
+        img.onload = function(){
+          if(!this.hadError){
+            uiUpdate(which, wood)
+          } else {
+            uiUpdate(which , wood, 1)
+          }
+        }        
       }
-    }
+    }     
+
+    // Show or hide other text field
+    var divOtherValue = $(this).parents('.form-group').find('.other-value')
+    if(isOther) {   
+
+      divOtherValue.show()   
+
+      $(divOtherValue).find('.other-value').select()
+
+    } else {
+      if(this.name.indexOf('other') == -1){
+        divOtherValue.hide() 
+        $(divOtherValue).find('.other-value').val('')
+      }
+        
+    }        
+    
+   
   })
 
   function setBookmarklet(){
@@ -72,14 +110,16 @@ $(function(){
     var f = document.forms.frmBuilder
     $.each(params, function(k,v){
       if(f[k]){
-        //$l(k,v)
-        //$l(f[k].value)
-        //f[k].value = v
-        f[k].value = v
-        $(f[k]).trigger('change')
+        f[k].value = decodeURIComponent(v).replace(/\+/g, ' ')
+        //$(f[k]).trigger('change')
+      }        
+    }) 
+
+    $.each($('.input-other-value'), function(){
+      if(this.value != ''){
+        $(this).parent('.other-value').show()
       }
-        
-    })  
+    })
   }
 
   // REinit parts for build
@@ -282,7 +322,7 @@ $(function(){
     // Have the .radio - now get the input
     var nxt   = rdo.next().find('input')
     // If the next radio is not 'other'
-    if(nxt &&  nxt.attr('id').indexOf('other') == -1){
+    if(nxt.length != 0 &&  $(nxt).attr('name').indexOf('other') == -1){
       nxt.click()
     } else{
       // Check the first one

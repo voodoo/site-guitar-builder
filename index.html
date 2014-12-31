@@ -65,8 +65,8 @@
       <div id='divPreviewContainer'>
         <div class='row'>
           <div class='col-lg-12'>
+            <span id='uiUpdate'></span>
             <div class='pull-right'>
-              <span id='uiUpdate'></span>
               <div class='btn-group' role='group'>
                 <button class='btn btn-default' id='aGuide' type='button'>
                   <i class='fa fa-file-image-o'></i>
@@ -83,11 +83,6 @@
           <img id="img-head" class="img-responsive" src="img/builds/blank.png" />
           <img id="img-hw" class="img-responsive" src="img/builds/blank.png" />
           <img id="img-scale" class="img-responsive" style="display:none" src="img/builds/scale.png" />
-          <!-- .layer -->
-          <!-- .piece.body -->
-          <!-- .piece.cap -->
-          <!-- .piece.neck -->
-          <!-- .piece.head -->
         </div>
       </div>
       <div class='row'>
@@ -102,6 +97,7 @@
                     Shape
                     <!-- =section -->
                   </label>
+                  <div><img title="Sharktail Guitars are smaller than normal (Manta, Shark)." data-toggle="tooltip" style="width:40px" src="img/etc/icon-tail.png" /></div>
                 </div>
                 <div class='col-sm-9'>
                   <div class='radio'>
@@ -127,10 +123,9 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='body_shape-other-value' name='body_shape-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='body_shape-other-value' name='body_shape-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
-                  <img title="Sharktail Guitars are smaller than normal (Manta, Shark)." data-toggle="tooltip" style="float:left;width:40px" src="img/etc/icon-tail.png" />
                   <div class='text-muted'>Or design your own!</div>
                 </div>
                 <!-- .col-sm-6 -->
@@ -172,7 +167,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='body_wood-other-value' name='body_wood-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='body_wood-other-value' name='body_wood-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'>The top piece - cap / pickguard</div>
@@ -230,7 +225,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='body_accent_wood-other-value' name='body_accent_wood-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='body_accent_wood-other-value' name='body_accent_wood-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'>The top piece - cap / pickguard</div>
@@ -244,6 +239,7 @@
                     Size
                     <!-- =section -->
                   </label>
+                  <div><img title="The size of the Manta, in particular, is important. See how it fits on your lap." data-toggle="tooltip" style="width:40px" src="img/etc/icon-tail.png" /></div>
                 </div>
                 <div class='col-sm-9'>
                   <div class='radio'>
@@ -274,11 +270,47 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='body_size-other-value' name='body_size-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='body_size-other-value' name='body_size-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
-                  <img title="The size of the Manta, in particular, is important. See how it fits on your lap." data-toggle="tooltip" style="float:left;width:40px" src="img/etc/icon-tail.png" />
                   <div class='text-muted'>You can create the size that is best for you</div>
+                </div>
+                <!-- .col-sm-6 -->
+                <!-- /%p= locals[:help] -->
+              </div>
+              <div class='row form-group' data-wood='hw'>
+                <div class='col-sm-3'>
+                  <label class='control-label'>
+                    Hardware Material
+                    <!-- =section -->
+                  </label>
+                </div>
+                <div class='col-sm-9'>
+                  <div class='radio'>
+                    <label for='body_hardware_material-0'>
+                      <input checked='1' id='body_hardware_material-0' name='body_hardware_material' type='radio' value='Chrome'>
+                        Chrome
+                      </input>
+                    </label>
+                  </div>
+                  <div class='radio'>
+                    <label for='body_hardware_material-1'>
+                      <input id='body_hardware_material-1' name='body_hardware_material' type='radio' value='Black'>
+                        Black
+                      </input>
+                    </label>
+                  </div>
+                  <div class='radio'>
+                    <label for='body_hardware_material-other'>
+                      <input class='other' id='body_hardware_material-other' name='body_hardware_material' type='radio' value='OTHER'>
+                        Other
+                      </input>
+                    </label>
+                    <div class='other-value' style='display:none;padding-left:16px'>
+                      <input class='input-other-value' id='body_hardware_material-other-value' name='body_hardware_material-other-value' placeholder='Other Value' type='text'>
+                    </div>
+                  </div>
+                  <div class='text-muted'></div>
                 </div>
                 <!-- .col-sm-6 -->
                 <!-- /%p= locals[:help] -->
@@ -289,6 +321,7 @@
                     Bridge type
                     <!-- =section -->
                   </label>
+                  <div><img title="Sharktail guitars use the Floyd Rose Speedloader bridge" data-toggle="tooltip" style="width:40px" src="img/etc/icon-tail.png" /></div>
                 </div>
                 <div class='col-sm-9'>
                   <div class='radio'>
@@ -312,10 +345,9 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='body_bridge_type-other-value' name='body_bridge_type-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='body_bridge_type-other-value' name='body_bridge_type-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
-                  <img title="Sharktail guitars use the Floyd Rose Speedloader bridge" data-toggle="tooltip" style="float:left;width:40px" src="img/etc/icon-tail.png" />
                   <div class='text-muted'></div>
                 </div>
                 <!-- .col-sm-6 -->
@@ -327,6 +359,7 @@
                     Bridge Brand
                     <!-- =section -->
                   </label>
+                  <div><img title="Sharktail guitars use the Floyd Rose Speedloader bridge" data-toggle="tooltip" style="width:40px" src="img/etc/icon-tail.png" /></div>
                 </div>
                 <div class='col-sm-9'>
                   <div class='radio'>
@@ -350,10 +383,9 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='body_bridge_brand-other-value' name='body_bridge_brand-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='body_bridge_brand-other-value' name='body_bridge_brand-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
-                  <img title="Sharktail guitars use the Floyd Rose Speedloader bridge" data-toggle="tooltip" style="float:left;width:40px" src="img/etc/icon-tail.png" />
                   <div class='text-muted'></div>
                 </div>
                 <!-- .col-sm-6 -->
@@ -395,7 +427,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='body_bridge_tailpiece-other-value' name='body_bridge_tailpiece-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='body_bridge_tailpiece-other-value' name='body_bridge_tailpiece-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'></div>
@@ -432,7 +464,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='body_bridge_pickup-other-value' name='body_bridge_pickup-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='body_bridge_pickup-other-value' name='body_bridge_pickup-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'></div>
@@ -469,44 +501,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='body_neck_pickup-other-value' name='body_neck_pickup-other-value' placeholder='Other Value' type='text'>
-                    </div>
-                  </div>
-                  <div class='text-muted'></div>
-                </div>
-                <!-- .col-sm-6 -->
-                <!-- /%p= locals[:help] -->
-              </div>
-              <div class='row form-group' data-wood='hw'>
-                <div class='col-sm-3'>
-                  <label class='control-label'>
-                    Hardware Material
-                    <!-- =section -->
-                  </label>
-                </div>
-                <div class='col-sm-9'>
-                  <div class='radio'>
-                    <label for='body_hardware_material-0'>
-                      <input checked='1' id='body_hardware_material-0' name='body_hardware_material' type='radio' value='Chrome'>
-                        Chrome
-                      </input>
-                    </label>
-                  </div>
-                  <div class='radio'>
-                    <label for='body_hardware_material-1'>
-                      <input id='body_hardware_material-1' name='body_hardware_material' type='radio' value='Black'>
-                        Black
-                      </input>
-                    </label>
-                  </div>
-                  <div class='radio'>
-                    <label for='body_hardware_material-other'>
-                      <input class='other' id='body_hardware_material-other' name='body_hardware_material' type='radio' value='OTHER'>
-                        Other
-                      </input>
-                    </label>
-                    <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='body_hardware_material-other-value' name='body_hardware_material-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='body_neck_pickup-other-value' name='body_neck_pickup-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'></div>
@@ -530,21 +525,28 @@
                 <div class='col-sm-9'>
                   <div class='radio'>
                     <label for='neck_fretboard_wood-0'>
-                      <input checked='1' id='neck_fretboard_wood-0' name='neck_fretboard_wood' type='radio' value='Walnut'>
-                        Walnut
+                      <input checked='1' id='neck_fretboard_wood-0' name='neck_fretboard_wood' type='radio' value='Ebony'>
+                        Ebony
                       </input>
                     </label>
                   </div>
                   <div class='radio'>
                     <label for='neck_fretboard_wood-1'>
-                      <input id='neck_fretboard_wood-1' name='neck_fretboard_wood' type='radio' value='Rosewood'>
-                        Rosewood
+                      <input id='neck_fretboard_wood-1' name='neck_fretboard_wood' type='radio' value='Walnut'>
+                        Walnut
                       </input>
                     </label>
                   </div>
                   <div class='radio'>
                     <label for='neck_fretboard_wood-2'>
-                      <input id='neck_fretboard_wood-2' name='neck_fretboard_wood' type='radio' value='Birdseye Maple'>
+                      <input id='neck_fretboard_wood-2' name='neck_fretboard_wood' type='radio' value='Rosewood'>
+                        Rosewood
+                      </input>
+                    </label>
+                  </div>
+                  <div class='radio'>
+                    <label for='neck_fretboard_wood-3'>
+                      <input id='neck_fretboard_wood-3' name='neck_fretboard_wood' type='radio' value='Birdseye Maple'>
                         Birdseye Maple
                       </input>
                     </label>
@@ -556,7 +558,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='neck_fretboard_wood-other-value' name='neck_fretboard_wood-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='neck_fretboard_wood-other-value' name='neck_fretboard_wood-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'></div>
@@ -593,7 +595,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='neck_scale_length-other-value' name='neck_scale_length-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='neck_scale_length-other-value' name='neck_scale_length-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'>Size from nut to bridge</div>
@@ -607,6 +609,7 @@
                     Neck through wood
                     <!-- =section -->
                   </label>
+                  <div><img title="Sharktail guitars are neck throughs - make up of 5 1/2 inch pieces" data-toggle="tooltip" style="width:40px" src="img/etc/icon-tail.png" /></div>
                 </div>
                 <div class='col-sm-9'>
                   <div class='radio'>
@@ -637,10 +640,9 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='neck_neck_through_wood-other-value' name='neck_neck_through_wood-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='neck_neck_through_wood-other-value' name='neck_neck_through_wood-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
-                  <img title="Sharktail guitars are neck throughs - make up of 5 1/2 inch pieces" data-toggle="tooltip" style="float:left;width:40px" src="img/etc/icon-tail.png" />
                   <div class='text-muted'>Not a bolt on</div>
                 </div>
                 <!-- .col-sm-6 -->
@@ -675,7 +677,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='neck_number_of_frets-other-value' name='neck_number_of_frets-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='neck_number_of_frets-other-value' name='neck_number_of_frets-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'></div>
@@ -719,7 +721,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='neck_fret_material-other-value' name='neck_fret_material-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='neck_fret_material-other-value' name='neck_fret_material-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'></div>
@@ -763,7 +765,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='neck_fret_size-other-value' name='neck_fret_size-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='neck_fret_size-other-value' name='neck_fret_size-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'></div>
@@ -783,40 +785,41 @@
                     Wood
                     <!-- =section -->
                   </label>
+                  <div><img title="The tuners on Sharktail guitars are on the body so the head is just a prop." data-toggle="tooltip" style="width:40px" src="img/etc/icon-tail.png" /></div>
                 </div>
                 <div class='col-sm-9'>
                   <div class='radio'>
                     <label for='head_wood-0'>
-                      <input checked='1' id='head_wood-0' name='head_wood' type='radio' value='Walnut'>
-                        Walnut
+                      <input checked='1' id='head_wood-0' name='head_wood' type='radio' value='None'>
+                        None
                       </input>
                     </label>
                   </div>
                   <div class='radio'>
                     <label for='head_wood-1'>
-                      <input id='head_wood-1' name='head_wood' type='radio' value='Maple'>
-                        Maple
+                      <input id='head_wood-1' name='head_wood' type='radio' value='Walnut'>
+                        Walnut
                       </input>
                     </label>
                   </div>
                   <div class='radio'>
                     <label for='head_wood-2'>
-                      <input id='head_wood-2' name='head_wood' type='radio' value='Spalted Maple'>
-                        Spalted Maple
+                      <input id='head_wood-2' name='head_wood' type='radio' value='Maple'>
+                        Maple
                       </input>
                     </label>
                   </div>
                   <div class='radio'>
                     <label for='head_wood-3'>
-                      <input id='head_wood-3' name='head_wood' type='radio' value='Birdseye Maple'>
-                        Birdseye Maple
+                      <input id='head_wood-3' name='head_wood' type='radio' value='Spalted Maple'>
+                        Spalted Maple
                       </input>
                     </label>
                   </div>
                   <div class='radio'>
                     <label for='head_wood-4'>
-                      <input id='head_wood-4' name='head_wood' type='radio' value='None'>
-                        None
+                      <input id='head_wood-4' name='head_wood' type='radio' value='Birdseye Maple'>
+                        Birdseye Maple
                       </input>
                     </label>
                   </div>
@@ -827,7 +830,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='head_wood-other-value' name='head_wood-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='head_wood-other-value' name='head_wood-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'></div>
@@ -841,6 +844,7 @@
                     Shape
                     <!-- =section -->
                   </label>
+                  <div><img title="The tuners on Sharktail guitars are on the body so the head is just a prop." data-toggle="tooltip" style="width:40px" src="img/etc/icon-tail.png" /></div>
                 </div>
                 <div class='col-sm-9'>
                   <div class='radio'>
@@ -871,7 +875,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='head_shape-other-value' name='head_shape-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='head_shape-other-value' name='head_shape-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'></div>
@@ -915,7 +919,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='head_tuners-other-value' name='head_tuners-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='head_tuners-other-value' name='head_tuners-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'></div>
@@ -959,7 +963,7 @@
                       </input>
                     </label>
                     <div class='other-value' style='display:none;padding-left:16px'>
-                      <input id='head_tuner_placement-other-value' name='head_tuner_placement-other-value' placeholder='Other Value' type='text'>
+                      <input class='input-other-value' id='head_tuner_placement-other-value' name='head_tuner_placement-other-value' placeholder='Other Value' type='text'>
                     </div>
                   </div>
                   <div class='text-muted'>Where the tuners will reside on the head</div>
@@ -971,39 +975,22 @@
           </div>
         </form>
       </div>
-      <!-- .row -->
-      <!-- .col-lg-12= partial('partials/builder/preview') -->
-      <!-- .row -->
-      <!-- .col-md-6 -->
-      <!-- %button(type='submit'  class='btn btn-success btn-block' id='btnSend') -->
-      <!-- Send Via Email -->
-      <!-- .col-md-6 -->
-      <!-- %button(type='submit'  class='btn btn-success btn-block' id='btnCopy') -->
-      <!-- Copy JSON -->
-      <!-- .row -->
-      <!-- .alert.alert-success -->
-      <!-- If your browser supports it, a copy is saved locally. So you can come back and start building again and your build -->
-      <!-- %b should -->
-      <!-- be saved. -->
       <div class='row'>
-        <div class='btn-group pull-right' role='group'>
+        <div class='btn-group' role='group'>
           <button class='btn btn-default' id='aLog' type='button'>Log</button>
-          <!-- %a{class: 'btn btn-default', :id => "aWood"} Wood -->
         </div>
         <div id='logContainer' style='display:none'></div>
       </div>
-      <script></script>
-      <!-- //$builds = -->
-      <!-- //= data.build.to_json -->
-      <!-- / html2canvas(document.getElementById('divPreview'), { -->
-      <!-- / onrendered: function(canvas) { -->
-      <!-- / document.body.appendChild(canvas); -->
-      <!-- / } -->
-      <!-- //, -->
-      <!-- //width: 300, -->
-      <!-- //height: 300 -->
-      <!-- }); -->
+      <p></p>
     </div>
-    <!-- = javascript_include_tag "/js/bootstrap.min.js", "/javascripts/jq-query.js", "/javascripts/builder.js", "/javascripts/jq-hash-serialize.js" -->
+    <div class='container'>
+      <div class='row'>
+        <div class='col-lg-12'>
+          <section class='footer'>
+            <a href="about/">About</a>
+          </section>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
