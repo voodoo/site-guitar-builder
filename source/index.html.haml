@@ -1,6 +1,7 @@
 - content_for :nav, partial("partials/builder/nav")
 - content_for :head do
   = javascript_include_tag "all"
+
 %h1 
   Build
   %small.text-muted 
@@ -24,9 +25,6 @@
     = image_tag "/img/builds/blank.png", id: "img-head", class: 'img-responsive'
     = image_tag "/img/builds/blank.png", id: "img-hw", class: 'img-responsive'
     = image_tag "/img/builds/scale.png", id: "img-scale", class: 'img-responsive', style: 'display:none'
-
-
-
 
 .row
   %form(data-persist="garlic" id='frmBuilder')

@@ -2,7 +2,8 @@ $(function(){
 
   function uiUpdate(which, wood, error){
     var sError = error ? '<span style="color:firebrick">[ERROR]</span> ' : ''
-    $('#uiUpdate').html(sError + "<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b")
+    var path   = $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
+    $('#uiUpdate').html("<a href='" + path + "'>" + sError + "<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b</a>")
     setTimeout(function(){
       if($('#uiUpdate').html() != ''){
         $('#uiUpdate').html('')
@@ -13,7 +14,7 @@ $(function(){
 
 
   // Form changes
-  $('#frmBuilder input').on('click', function(t){
+  $('#frmBuilder input').on('change', function(t){
     //log('frmBuilder input clicked = ' + $(this).val())
     
     var name = $(this).attr('name')
@@ -128,7 +129,7 @@ $(function(){
     $.each(['body', 'cap', 'neck', 'hw', 'head'], function(){
       var label = $(".form-group[data-wood='" + this + "']")
       //$l($(label).find('input[type=radio]')[0])
-      $($(label).find('input[type=radio]:checked')).trigger('click')
+      $($(label).find('input[type=radio]:checked')).trigger('change')
     })
   }
 
