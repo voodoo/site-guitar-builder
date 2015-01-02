@@ -1,10 +1,15 @@
 $(function(){
+  
   // show/hide overlay of scale
   $('#aGuide').on('click', function(){
     $('#img-scale').toggle()
   })
+  // show/hide overlay of scale
+  $('#aJSON').on('click', function(){
+    $('#img-scale').toggle()
+  })  
 
-  // Handle clicks on build imgs
+  // Handle location of clicks on build imgs
   $('#divPreview').on('click', function(e){
     var x = e.offsetX;
     if(x < 250){
@@ -17,13 +22,6 @@ $(function(){
       setNextWoodFor('head')
     }
   })
-
-  $('.layer .piece').on('mouseover', function(){
-    $(this).css('opacity', '.1')
-  })
-  $('.layer .piece').on('mouseout', function(){
-    $(this).css('opacity', '0')
-  })  
 
   // When Preview is checked
   function setNextWoodFor(part){

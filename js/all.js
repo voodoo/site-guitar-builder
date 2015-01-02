@@ -10,7 +10,8 @@ $(function(){
 
   function uiUpdate(which, wood, error){
     var sError = error ? '<span style="color:firebrick">[ERROR]</span> ' : ''
-    $('#uiUpdate').html(sError + "<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b")
+    var path   = $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
+    $('#uiUpdate').html("<a href='" + path + "'>" + sError + "<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b</a>")
     setTimeout(function(){
       if($('#uiUpdate').html() != ''){
         $('#uiUpdate').html('')
@@ -18,10 +19,8 @@ $(function(){
     },3000)
   }
 
-
-
   // Form changes
-  $('#frmBuilder input').on('click', function(t){
+  $('#frmBuilder input').on('change', function(t){
     //log('frmBuilder input clicked = ' + $(this).val())
     
     var name = $(this).attr('name')
@@ -86,7 +85,9 @@ $(function(){
 
   function setBookmarklet(){
     var serial = $("#frmBuilder").serialize()
-     $('.aBookmarklet').attr('href', "?" + serial)
+    $('.aBookmarklet').attr('href', "?" + serial)
+    var h = $("#frmBuilder").serializeHash()
+    $('#jsonContainer').html(JSON.stringify(h).split(/,/g).join('<br/>'))
   }
 
   // use relative paths
@@ -136,7 +137,7 @@ $(function(){
     $.each(['body', 'cap', 'neck', 'hw', 'head'], function(){
       var label = $(".form-group[data-wood='" + this + "']")
       //$l($(label).find('input[type=radio]')[0])
-      $($(label).find('input[type=radio]:checked')).trigger('click')
+      $($(label).find('input[type=radio]:checked')).trigger('change')
     })
   }
 
@@ -148,10 +149,6 @@ $(function(){
 
   $PATH   = setLocalSrcPath() //Where are images when deployed to GH
 
-
-  
-
-
   initForm() 
   initWoodParts()
 
@@ -161,41 +158,8 @@ $(function(){
     $('#uiUpdate').show()
   },2000)
 
-  // if(params["body_shape"]){
-  //   setTimeout(initWoodParts, 1000)
-  // } else {
-    
-  //   initWoodParts()
-  // }
-   
-
 })
 
-
-
-  // // Bind OTHER form values to preview
-  // function updatePreview(){
-  //   var h = $('#frmBuilder').serializeHash()
-  //   $.each(h,function(k,v){
-  //     if(v === 'OTHER'){
-  //      var n = $('#' + k + '-other-value')
-  //      $('#value-' + k).html(n.val()) 
-  //     } else {$('#value-' + k).html(v)}
-        
-  //   })   
-  // }
-
-  // // // Other value handler
-  // // $('.radio input').on('change', function(){
-  // //   var otherValue = $(this).parents('.col-sm-2').find('.other-value')
-  // //   if($(this).val() === 'OTHER') {    
-  // //     otherValue.show()   
-  // //   } else {
-  // //     //$l(otherValue)
-  // //     otherValue.hide() 
-  // //   } 
-  // //   updatePreview()
-  // // }) 
 ;
 var $l = console.log.bind(console);
 
@@ -204,9 +168,17 @@ function log(){
 		$('#logContainer').prepend(this + "<br/>")
 	})
 }
+
+
 $(function(){
 	$('#aLog').on('click', function(){
 		$('#logContainer').toggle()
+	})
+})
+
+$(function(){
+	$('#aJson').on('click', function(){
+		$('#jsonContainer').toggle()
 	})
 })
 ;
@@ -287,12 +259,17 @@ $(function(){
 })
 ;
 $(function(){
+  
   // show/hide overlay of scale
   $('#aGuide').on('click', function(){
     $('#img-scale').toggle()
   })
+  // show/hide overlay of scale
+  $('#aJSON').on('click', function(){
+    $('#img-scale').toggle()
+  })  
 
-  // Handle clicks on build imgs
+  // Handle location of clicks on build imgs
   $('#divPreview').on('click', function(e){
     var x = e.offsetX;
     if(x < 250){
@@ -305,13 +282,6 @@ $(function(){
       setNextWoodFor('head')
     }
   })
-
-  $('.layer .piece').on('mouseover', function(){
-    $(this).css('opacity', '.1')
-  })
-  $('.layer .piece').on('mouseout', function(){
-    $(this).css('opacity', '0')
-  })  
 
   // When Preview is checked
   function setNextWoodFor(part){
@@ -335,18 +305,18 @@ $(function(){
 ;
   // Scrolling
 
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top - 50
-        }, 1000);
-        return false;
-      }
-    }
-  })
+  // $('a[href*=#]:not([href=#])').click(function() {
+  //   if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  //     var target = $(this.hash);
+  //     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+  //     if (target.length) {
+  //       $('html,body').animate({
+  //         scrollTop: target.offset().top //- 50
+  //       }, 1000);
+  //       return false;
+  //     }
+  //   }
+  // })
 ;
 String.prototype.titleize = function(splitter) {
   var words = this.split(splitter ? splitter : ' ')
