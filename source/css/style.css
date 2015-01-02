@@ -31,9 +31,9 @@ section.footer{
 }
 
 
-h4{
-  border-left: 4px solid teal;
-  padding-left: 12px;
+h1.fancy{
+  border-bottom: 2px solid #ccc;
+  font-size:2em;
 }
 
 
