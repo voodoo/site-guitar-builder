@@ -75,8 +75,13 @@ $(function(){
    
   })
 
-  function setBookmarklet(){
-    var serial = $("#frmBuilder").serialize()
+  function setBookmarklet(){ 
+
+    var serial = $('#frmBuilder').find(":input").filter(function () {
+            return $.trim(this.value).length > 0
+    }).serialize()
+
+
     $('.aBookmarklet').attr('href', "?" + serial)
     var h = $("#frmBuilder").serializeHash()
     $('#jsonContainer').html(JSON.stringify(h).split(/,/g).join('<br/>'))
