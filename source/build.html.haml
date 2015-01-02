@@ -2,10 +2,17 @@
 - content_for :head do
   = javascript_include_tag "all"
 
+/ .alert.alert-warning
+/   Builder has only been tested with 
+/   = link_to "Chrome", "https://www.google.com/intl/en/chrome/browser/desktop/index.html"
+/   \- and may not work with other browsers.
+
 %h1 
   Build
   %small.text-muted 
     any guitar
+
+
 
 #divPreviewContainer
   .row

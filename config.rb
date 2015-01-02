@@ -43,31 +43,16 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-# if ENV['deploy'] == 'git'
-  activate :deploy do |deploy|
-    deploy.method = :git
-    deploy.build_before = true # default: false
-    # Optional Settings
-    # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
-    # deploy.branch   = 'custom-branch' # default: gh-pages
-    # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
-    # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
-  end
-# else
-#   activate :deploy do |deploy|
-#     deploy.method = :rsync
-#     deploy.host   = 'assets.integrated-internet.com'
-#     deploy.path   = '/home/mblz/static/sites/builder'
-#     # Optional Settings
-#     deploy.user  = 'mblz' # no default
-#     # deploy.port  = 5309 # ssh port, default: 22
-#     # deploy.clean = true # remove orphaned files on remote host, default: false
-#     # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
-#   end
-# end
-# with_layout :builder do
-#   page "/builder/*"
-# end
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.build_before = true # default: false
+  # Optional Settings
+  # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
+  # deploy.branch   = 'custom-branch' # default: gh-pages
+  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+end
+
 
 ###
 # Compass
