@@ -1,38 +1,36 @@
-- content_for :nav, partial("partials/builder/nav")
-- content_for :head do
-  = javascript_include_tag "all"
+- content_for :nav do
+  %ul.nav.navbar-nav
+    %li.active
+      = link_to "About", "/about"
+    %li= link_to "Virtual Guitar Build", "/build"
 
-%h1 
-  Build
-  %small.text-muted 
-    any guitar
+%h4 What is this?
 
-#divPreviewContainer
-  .row
-    .col-lg-12
-      %span#uiUpdate
-      .pull-right        
-        .btn-group(role="group")      
-          %button{type: :button, class: 'btn btn-default', :id => "aGuide"}     
-            %i.fa.fa-file-image-o
-            Guide
-      
+%p Visual guitar building tools
 
-  #divPreview.hidden-xs.hidden-sm
-    = image_tag "/img/builds/blank.png", id: "img-body", class: 'img-responsive'
-    = image_tag "/img/builds/blank.png", id: "img-cap", class: 'img-responsive'
-    = image_tag "/img/builds/blank.png", id: "img-neck", class: 'img-responsive'
-    = image_tag "/img/builds/blank.png", id: "img-head", class: 'img-responsive'
-    = image_tag "/img/builds/blank.png", id: "img-hw", class: 'img-responsive'
-    = image_tag "/img/builds/scale.png", id: "img-scale", class: 'img-responsive', style: 'display:none'
+%h5 Builder
+%ul
+  %li Visualize your guitar
+  %li Inventory of guitar parts
 
-.row
-  %form(data-persist="garlic" id='frmBuilder')
-    - %w[body neck head].each do |section|
-      .col-lg-4.col-md-6.col-sm-12= partial('partials/builder/section', locals: {section: section}) 
+%h5 2D tools
+%ul
+  %li Pixelmator tools for drawing the parts
 
-.row
-  .btn-group(role="group")      
-    %button{type: :button, class: 'btn btn-default', :id => "aLog"} Log
-  #logContainer(style='display:none')
+%h4 Who is this for?
+
+%ul
+  %li Guitar builders
+  %li Guitar players who want to build and/or design their own guitar
+
+
+%h4 Why?
+
+%p One day I decided I wanted to build my own guitar. 
 %p
+  I 
+  = link_to "documented the process", "http://git.vudmaska.com/"
+  , to help the builder, and these tools are the distillation (and extension of) that process. 
+%p I hope you find it useful.
+
+

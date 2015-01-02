@@ -4,6 +4,10 @@ $(function(){
   $('#aGuide').on('click', function(){
     $('#img-scale').toggle()
   })
+  // show/hide overlay of scale
+  $('#aJSON').on('click', function(){
+    $('#img-scale').toggle()
+  })  
 
   // Handle location of clicks on build imgs
   $('#divPreview').on('click', function(e){

@@ -31,6 +31,11 @@ section.footer{
 }
 
 
+h4{
+  border-left: 4px solid teal;
+  padding-left: 12px;
+}
+
 
 /*#divPreview .layer{
   position:absolute;

@@ -11,8 +11,6 @@ $(function(){
     },3000)
   }
 
-
-
   // Form changes
   $('#frmBuilder input').on('change', function(t){
     //log('frmBuilder input clicked = ' + $(this).val())
@@ -79,7 +77,9 @@ $(function(){
 
   function setBookmarklet(){
     var serial = $("#frmBuilder").serialize()
-     $('.aBookmarklet').attr('href', "?" + serial)
+    $('.aBookmarklet').attr('href', "?" + serial)
+    var h = $("#frmBuilder").serializeHash()
+    $('#jsonContainer').html(JSON.stringify(h).split(/,/g).join('<br/>'))
   }
 
   // use relative paths
@@ -141,10 +141,6 @@ $(function(){
 
   $PATH   = setLocalSrcPath() //Where are images when deployed to GH
 
-
-  
-
-
   initForm() 
   initWoodParts()
 
@@ -154,38 +150,5 @@ $(function(){
     $('#uiUpdate').show()
   },2000)
 
-  // if(params["body_shape"]){
-  //   setTimeout(initWoodParts, 1000)
-  // } else {
-    
-  //   initWoodParts()
-  // }
-   
-
 })
 
-
-
-  // // Bind OTHER form values to preview
-  // function updatePreview(){
-  //   var h = $('#frmBuilder').serializeHash()
-  //   $.each(h,function(k,v){
-  //     if(v === 'OTHER'){
-  //      var n = $('#' + k + '-other-value')
-  //      $('#value-' + k).html(n.val()) 
-  //     } else {$('#value-' + k).html(v)}
-        
-  //   })   
-  // }
-
-  // // // Other value handler
-  // // $('.radio input').on('change', function(){
-  // //   var otherValue = $(this).parents('.col-sm-2').find('.other-value')
-  // //   if($(this).val() === 'OTHER') {    
-  // //     otherValue.show()   
-  // //   } else {
-  // //     //$l(otherValue)
-  // //     otherValue.hide() 
-  // //   } 
-  // //   updatePreview()
-  // // }) 
