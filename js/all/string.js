@@ -6,4 +6,8 @@ String.prototype.titleize = function(splitter) {
   }
   return array.join(' ')
 }
+
+String.prototype.toName = function() {
+  return this.toLowerCase().replace(/\s/g, '_')
+}
 ;

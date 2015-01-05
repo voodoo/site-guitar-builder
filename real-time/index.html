@@ -10,9 +10,11 @@
     <link href='/img/logo.png' rel='shortcut icon' type='image/x-icon'>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <link href="../css/all.css" rel="stylesheet" type="text/css" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js'></script>
     <script src='https://cdn.firebase.com/js/client/2.0.6/firebase.js'></script>
     <script src='/js/fb.js'></script>
     <script src='/js/all/log.js'></script>
+    <script src='/js/all/string.js'></script>
   </head>
   <body>
     <!-- (data-spy="scroll" data-target=".navbar-default") -->
@@ -37,7 +39,29 @@
       </div>
     </nav>
     <a name='builder'></a>
-    <div class='container'><img class="rt" id="imgGit" src="../img/rt/manta.png" /></div>
+    <div class='container'>
+      <div class='hidden-xs' id='divPreview'>
+        <img id="img-body" class="img-responsive" src="../img/builds/manta/body/walnut.png" />
+        <img id="img-cap" class="img-responsive" src="../img/builds/manta/cap/walnut.png" />
+        <img id="img-neck" class="img-responsive" src="../img/builds/manta/neck/walnut.png" />
+        <img id="img-hw" class="img-responsive" src="../img/builds/manta/hw/chrome.png" />
+      </div>
+      <div class='container' id='divTools'>
+        <div class='row'>
+          <h5>Developer tools</h5>
+          <div class='btn-group' role='group'>
+            <button class='btn btn-default' id='aReset' type='button'>Reset</button>
+          </div>
+        </div>
+      </div>
+      <script>
+        var $ip;
+      </script>
+      <script src='http://l2.io/ip.js?var=$ip' type='text/javascript'></script>
+      <script type='text/javascript'>
+        document.write("Your IP is : ", $ip);
+      </script>
+    </div>
     <!-- .container -->
     <!-- .row -->
     <!-- .col-lg-12 -->
