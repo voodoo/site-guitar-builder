@@ -8,7 +8,6 @@
   %li.active
     %a{:href => "#", class: 'aBookmarklet'} Save
 
-
 .alert.alert-warning
   Builder has only been tested with 
   = link_to "Chrome", "https://www.google.com/intl/en/chrome/browser/desktop/index.html"
@@ -48,6 +47,7 @@
       .col-lg-4.col-md-6.col-sm-12= partial('partials/builder/section', locals: {section: section}) 
 
 .row
+  %h5 Developer tools
   .btn-group(role="group")      
     %button{type: :button, class: 'btn btn-default', :id => "aLog"} Log
     %button{type: :button, class: 'btn btn-default', :id => "aJson"} JSON

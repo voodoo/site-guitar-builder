@@ -1,0 +1,28 @@
+- content_for :head do
+  %script(src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js")
+  %script(src="https://cdn.firebase.com/js/client/2.0.6/firebase.js")
+  %script(src='/js/fb.js')
+  %script(src='/js/all/log.js')
+  %script(src='/js/all/string.js')
+
+#divPreview.hidden-xs
+  = image_tag "/img/builds/manta/body/walnut.png", id: "img-body", class: 'img-responsive'
+  = image_tag "/img/builds/manta/cap/walnut.png", id: "img-cap", class: 'img-responsive'
+  = image_tag "/img/builds/manta/neck/walnut.png", id: "img-neck", class: 'img-responsive'
+  = image_tag "/img/builds/manta/hw/chrome.png", id: "img-hw", class: 'img-responsive'
+ 
+
+.container#divTools
+  .row
+    %h5 Developer tools
+    .btn-group(role="group")      
+      %button{type: :button, class: 'btn btn-default', :id => "aReset"} Reset
+
+
+/ %script
+/   var $ip;
+
+/ %script(type="text/javascript" src="http://l2.io/ip.js?var=$ip")
+
+/ %script(type="text/javascript")
+/   document.write("Your IP is : ", $ip);

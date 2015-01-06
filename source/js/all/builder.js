@@ -28,7 +28,7 @@ $(function(){
 
     var which = $(this).parents('.form-group').data('wood')
     if(which && !isOther){ // Wood needs changing?
-      var wood = $(this).val().toName()
+      var wood = $(this).val().toLowerCase().replace(/\s/g, '_')
         if(true){//wood != 'none'
         var img   = document.getElementById('img-' + which)
         if(wood == 'none'){
@@ -139,23 +139,21 @@ $(function(){
   }
 
 
-  if($('#divPreview img').length){
-    var params = $.getQueryParameters()
 
-    setBuild(params["body_shape"] || 'Manta')
+  var params = $.getQueryParameters()
 
-    $PATH   = setLocalSrcPath() //Where are images when deployed to GH
+  setBuild(params["body_shape"] || 'Manta')
 
-    initForm() 
-    initWoodParts()
+  $PATH   = setLocalSrcPath() //Where are images when deployed to GH
 
-    $('#uiUpdate').hide()
+  initForm() 
+  initWoodParts()
 
-    setTimeout(function(){
-      $('#uiUpdate').show()
-    },2000)    
-  }
+  $('#uiUpdate').hide()
 
+  setTimeout(function(){
+    $('#uiUpdate').show()
+  },2000)
 
 })
 
