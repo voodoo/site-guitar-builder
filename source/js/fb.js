@@ -35,7 +35,7 @@
 		var c = $current += 1
 		if($caps[c]) imgRef.update({current: c})		
 		  else imgRef.update({current: 0}) // start over	
-		imgRef.push({ip: $ip})
+		//imgRef.push({ip: $ip})
 	}
 
   // EVENTS ----------------------------------
