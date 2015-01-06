@@ -139,21 +139,23 @@ $(function(){
   }
 
 
+  if($('#divPreview img').length){
+    var params = $.getQueryParameters()
 
-  var params = $.getQueryParameters()
+    setBuild(params["body_shape"] || 'Manta')
 
-  setBuild(params["body_shape"] || 'Manta')
+    $PATH   = setLocalSrcPath() //Where are images when deployed to GH
 
-  $PATH   = setLocalSrcPath() //Where are images when deployed to GH
+    initForm() 
+    initWoodParts()
 
-  initForm() 
-  initWoodParts()
+    $('#uiUpdate').hide()
 
-  $('#uiUpdate').hide()
+    setTimeout(function(){
+      $('#uiUpdate').show()
+    },2000)    
+  }
 
-  setTimeout(function(){
-    $('#uiUpdate').show()
-  },2000)
 
 })
 
