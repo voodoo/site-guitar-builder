@@ -4,21 +4,21 @@
     <meta charset='utf-8'>
       <title>Custom Modern Ergonomic Guitars</title>
     </meta>
-    <meta content='Custom Modern Guitars' name='description'>
+    <meta content='Modern Custom Guitars' name='description'>
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <meta content='' name='author'>
     <link href='/img/logo.png' rel='shortcut icon' type='image/x-icon'>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <link href="../css/all.css" rel="stylesheet" type="text/css" />
+    <script src="../js/all.js" type="text/javascript"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js'></script>
     <script src='https://cdn.firebase.com/js/client/2.0.6/firebase.js'></script>
-    <script src='/js/fb.js'></script>
-    <script src='/js/all/log.js'></script>
-    <script src='/js/all/string.js'></script>
+    <script src='/js/real-time.js'></script>
+    <!-- %script(src='/js/all/log.js') -->
+    <!-- %script(src='/js/all/string.js') -->
+    <!-- %script(src='/js/all/pos.js') -->
   </head>
   <body>
-    <!-- (data-spy="scroll" data-target=".navbar-default") -->
-    <!-- *** START NAVIGATION *** -->
     <nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
       <div class='navbar-inner'>
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,38 +34,66 @@
           </a>
         </div>
         <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
-          
+          <ul class='nav navbar-nav'>
+            
+          </ul>
         </div>
       </div>
     </nav>
-    <a name='builder'></a>
     <div class='container'>
       <div class='hidden-xs' id='divPreview'>
-        <img id="img-body" class="img-responsive" src="../img/builds/manta/body/walnut.png" />
-        <img id="img-cap" class="img-responsive" src="../img/builds/manta/cap/walnut.png" />
-        <img id="img-neck" class="img-responsive" src="../img/builds/manta/neck/walnut.png" />
-        <img id="img-hw" class="img-responsive" src="../img/builds/manta/hw/chrome.png" />
+        <!-- (style="border:1px solid #ccc") -->
+        <img id="img-body" src="../img/builds/blank.png" />
+        <img id="img-cap" src="../img/builds/blank.png" />
+        <img id="img-neck" src="../img/builds/blank.png" />
+        <img id="img-head" src="../img/builds/blank.png" />
+        <img id="img-hw" src="../img/builds/blank.png" />
       </div>
-      <div class='container' id='divTools'>
+      <div class='container' style='text-align:center'>
+        <div class='btn-group btn-builds' data-toggle='buttons' role='group'>
+          <label class='btn btn-primary'>
+            <input id='build-option-1' name='build-option' type='radio' value='0'>Manta</input>
+          </label>
+          <label class='btn btn-primary'>
+            <input id='build-option-2' name='build-option' type='radio' value='1'>Shark</input>
+          </label>
+        </div>
+      </div>
+      <div class='container'>
+        <h2>Details</h2>
         <div class='row'>
-          <h5>Developer tools</h5>
-          <div class='btn-group' role='group'>
-            <button class='btn btn-default' id='aReset' type='button'>Reset</button>
+          <div class='col-lg-4 col-md-6 col-sm-12'>
+            <label>Body</label>
+            <span id='body-wood'></span>
+            <br>
+            <label>Cap</label>
+            <span id='cap-wood'></span>
+          </div>
+          <div class='col-lg-4 col-md-6 col-sm-12'>
+            <label>Neck</label>
+            <span id='neck-wood'></span>
+          </div>
+          <div class='col-lg-4 col-md-6 col-sm-12'>
+            <label>Head</label>
+            <span id='head-wood'></span>
           </div>
         </div>
       </div>
-      <script>
-        var $ip;
-      </script>
-      <script src='http://l2.io/ip.js?var=$ip' type='text/javascript'></script>
-      <script type='text/javascript'>
-        document.write("Your IP is : ", $ip);
-      </script>
+      <div class='container' id='divTools'>
+        <div class='row'>
+          <div class='col-lg-4 col-md-6 col-sm-12'>
+            <h5>Developer tools</h5>
+            <div class='btn-group' role='group'>
+              <button class='btn btn-default' id='aReset' type='button'>Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- %script -->
+      <!-- var $ip; -->
+      <!-- %script(type="text/javascript" src="http://l2.io/ip.js?var=$ip") -->
+      <!-- %script(type="text/javascript") -->
+      <!-- document.write("Your IP is : ", $ip); -->
     </div>
-    <!-- .container -->
-    <!-- .row -->
-    <!-- .col-lg-12 -->
-    <!-- %section.footer -->
-    <!-- = link_to "About", "/about.html" -->
   </body>
 </html>
