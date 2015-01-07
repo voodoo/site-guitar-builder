@@ -1,22 +1,47 @@
 - content_for :head do
   %script(src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js")
   %script(src="https://cdn.firebase.com/js/client/2.0.6/firebase.js")
-  %script(src='/js/fb.js')
-  %script(src='/js/all/log.js')
-  %script(src='/js/all/string.js')
+  %script(src='/js/real-time.js')
+  / %script(src='/js/all/log.js')
+  / %script(src='/js/all/string.js')
+  / %script(src='/js/all/pos.js')
 
 #divPreview.hidden-xs
-  = image_tag "/img/builds/manta/body/walnut.png", id: "img-body", class: 'img-responsive'
-  = image_tag "/img/builds/manta/cap/walnut.png", id: "img-cap", class: 'img-responsive'
-  = image_tag "/img/builds/manta/neck/walnut.png", id: "img-neck", class: 'img-responsive'
-  = image_tag "/img/builds/manta/hw/chrome.png", id: "img-hw", class: 'img-responsive'
- 
+  /(style="border:1px solid #ccc")
+  = image_tag "/img/builds/blank.png", id: "img-body"
+  = image_tag "/img/builds/blank.png", id: "img-cap"
+  = image_tag "/img/builds/blank.png", id: "img-neck"
+  = image_tag "/img/builds/blank.png", id: "img-head"
+  = image_tag "/img/builds/blank.png", id: "img-hw"
 
+.container(style="text-align:center")
+  .btn-group.btn-builds(role="group" data-toggle="buttons")   
+    %label.btn.btn-primary
+      %input(type="radio" name="build-option" id="build-option-1" value='0') Manta
+    %label.btn.btn-primary
+      %input(type="radio" name="build-option" id="build-option-2" value='1') Shark
+
+.container
+  %h2 Details 
+  .row
+    .col-lg-4.col-md-6.col-sm-12
+      %label Body
+      %span#body-wood
+      %br/
+      %label Cap
+      %span#cap-wood    
+    .col-lg-4.col-md-6.col-sm-12
+      %label Neck
+      %span#neck-wood
+    .col-lg-4.col-md-6.col-sm-12
+      %label Head
+      %span#head-wood      
 .container#divTools
   .row
-    %h5 Developer tools
-    .btn-group(role="group")      
-      %button{type: :button, class: 'btn btn-default', :id => "aReset"} Reset
+    .col-lg-4.col-md-6.col-sm-12
+      %h5 Developer tools
+      .btn-group(role="group")      
+        %button{type: :button, class: 'btn btn-default', :id => "aReset"} Reset
 
 
 / %script

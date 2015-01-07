@@ -1,5 +1,47 @@
 $(function(){
 
+  // show/hide overlay of scale
+  $('#aGuide').on('click', function(){
+    $('#img-scale').toggle()
+  })
+  // show/hide overlay of scale
+  $('#aJSON').on('click', function(){
+    $('#img-scale').toggle()
+  })  
+
+  // Find location of clicks  - see which item to toggle thru
+  $('#divPreview').on('click', function(e){
+    var pos = fuckingBrowsersSTILLFuckingSuckAtPosition(e, $(this))
+    var x = pos.x
+    if(x < 250){
+      setNextWoodFor('body')
+    } else if (x > 250 && x < 550) {
+      setNextWoodFor('cap')
+    } else if (x > 500 && x < 750) {
+      setNextWoodFor('neck');
+    } else {
+      setNextWoodFor('head')
+    }
+  })
+
+  // When Preview is checked
+  function setNextWoodFor(part){
+    // Find this part that is being changed
+    var label = $(".form-group[data-wood='" + part + "']")
+    // Get the checked radio - so we can use next
+    var rdo   = $(label).find('input[type=radio]:checked').parents('.radio')
+    // Have the .radio - now get the input
+    var nxt   = rdo.next().find('input')
+    // If the next radio is not 'other'
+    if(nxt.length && typeof($(nxt).attr('class')) == 'undefined'){
+      nxt.click()
+    } else{
+      // Check the first one
+      $($(label).find('input[type=radio]')[0]).click()
+    }
+  }
+
+
   function uiUpdate(which, wood, error){
     var sError = error ? '<span style="color:firebrick">[ERROR]</span> ' : ''
     var path   = $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
