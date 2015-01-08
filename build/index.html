@@ -115,6 +115,14 @@
                     </label>
                   </div>
                   <div class='radio'>
+                    <label for='body_shape-2'>
+                      <input id='body_shape-2' name='body_shape' type='radio' value='Modern Shark'>
+                        Modern Shark
+                      </input>
+                      <div><img src="../img/builds/modern_shark/modern_shark.png" /></div>
+                    </label>
+                  </div>
+                  <div class='radio'>
                     <label for='body_shape-other'>
                       <input class='other' id='body_shape-other' name='body_shape' type='radio' value='OTHER'>
                         Other
@@ -231,6 +239,43 @@
                 <!-- .col-sm-6 -->
                 <!-- /%p= locals[:help] -->
               </div>
+              <div class='row form-group' data-wood='hw'>
+                <div class='col-sm-3'>
+                  <label class='control-label'>
+                    Hardware Material
+                    <!-- =section -->
+                  </label>
+                </div>
+                <div class='col-sm-9'>
+                  <div class='radio'>
+                    <label for='body_hardware_material-0'>
+                      <input checked='1' id='body_hardware_material-0' name='body_hardware_material' type='radio' value='Chrome'>
+                        Chrome
+                      </input>
+                    </label>
+                  </div>
+                  <div class='radio'>
+                    <label for='body_hardware_material-1'>
+                      <input id='body_hardware_material-1' name='body_hardware_material' type='radio' value='Black'>
+                        Black
+                      </input>
+                    </label>
+                  </div>
+                  <div class='radio'>
+                    <label for='body_hardware_material-other'>
+                      <input class='other' id='body_hardware_material-other' name='body_hardware_material' type='radio' value='OTHER'>
+                        Other
+                      </input>
+                    </label>
+                    <div class='other-value' style='display:none;padding-left:16px'>
+                      <input class='input-other-value' id='body_hardware_material-other-value' name='body_hardware_material-other-value' placeholder='Other Value' type='text'>
+                    </div>
+                  </div>
+                  <div class='text-muted'></div>
+                </div>
+                <!-- .col-sm-6 -->
+                <!-- /%p= locals[:help] -->
+              </div>
               <div class='row form-group'>
                 <div class='col-sm-3'>
                   <label class='control-label'>
@@ -272,43 +317,6 @@
                     </div>
                   </div>
                   <div class='text-muted'>You can create the size that is best for you</div>
-                </div>
-                <!-- .col-sm-6 -->
-                <!-- /%p= locals[:help] -->
-              </div>
-              <div class='row form-group' data-wood='hw'>
-                <div class='col-sm-3'>
-                  <label class='control-label'>
-                    Hardware Material
-                    <!-- =section -->
-                  </label>
-                </div>
-                <div class='col-sm-9'>
-                  <div class='radio'>
-                    <label for='body_hardware_material-0'>
-                      <input checked='1' id='body_hardware_material-0' name='body_hardware_material' type='radio' value='Chrome'>
-                        Chrome
-                      </input>
-                    </label>
-                  </div>
-                  <div class='radio'>
-                    <label for='body_hardware_material-1'>
-                      <input id='body_hardware_material-1' name='body_hardware_material' type='radio' value='Black'>
-                        Black
-                      </input>
-                    </label>
-                  </div>
-                  <div class='radio'>
-                    <label for='body_hardware_material-other'>
-                      <input class='other' id='body_hardware_material-other' name='body_hardware_material' type='radio' value='OTHER'>
-                        Other
-                      </input>
-                    </label>
-                    <div class='other-value' style='display:none;padding-left:16px'>
-                      <input class='input-other-value' id='body_hardware_material-other-value' name='body_hardware_material-other-value' placeholder='Other Value' type='text'>
-                    </div>
-                  </div>
-                  <div class='text-muted'></div>
                 </div>
                 <!-- .col-sm-6 -->
                 <!-- /%p= locals[:help] -->

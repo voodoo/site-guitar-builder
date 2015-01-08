@@ -87,11 +87,11 @@
 		body:  	["walnut", "alder", 		"mahogany"],
 		cap:  	["walnut", "maple", 		"spalted_maple", 	"birdseye_maple", 	"figured_maple"],
 		neck:  	["walnut", "rosewood", 	"ebony", 					"birdseye_maple"],
-		head:  	["walnut", "maple", 		"spalted_maple", 	"birdseye_maple"],
+		head:  	["walnut", "maple", 		"spalted_maple", 	"birdseye_maple", "none"],
 		hw:  	  ["chrome"],
 	}
 
-	var Build = ["manta", "shark"]
+	var Build = ["manta", "shark", "modern_shark"]
 
 	$('#aReset').on('click', function(){
 		resetParts()
