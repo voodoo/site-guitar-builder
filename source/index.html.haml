@@ -5,7 +5,7 @@
 
 %h1.fancy What is this?
 
-%p Visual guitar building tools
+%p Visual guitar design tools
 
 %h5 Builder
 %ul
@@ -20,6 +20,21 @@
 %p 
   Use it to 
   = link_to "build your own builder", "https://github.com/voodoo/site-guitar-builder"
+
+.embed-responsive.embed-responsive-16by9
+  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/vdjJhzaCqoE", :width => "100%"}
+
+%p/
+
+.alert.alert-warning(data-dismiss="alert")
+  %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+    %span{"aria-hidden" => "true"} &times;
+  Builder has only been tested with 
+  = link_to "Chrome", "https://www.google.com/intl/en/chrome/browser/desktop/index.html"
+  and
+  = link_to "Firefox", "https://www.mozilla.org/firefox/new/?scene=2#download-fx"  
+  \- and may not work with other browsers.
+
 
 %h1.fancy Who is this for?
 
