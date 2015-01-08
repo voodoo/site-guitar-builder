@@ -141,7 +141,7 @@ $(function(){
 
   // Set global build var  
   function setBuild(build){
-    $BUILD = build.toLowerCase().replace(/\s/g,'_')
+    $BUILD = build.toLowerCase().replace(/\s/g,'_').replace(/\+/g, '_')
   }
 
   // From url
@@ -149,12 +149,11 @@ $(function(){
     log('init form')
     var f = document.forms.frmBuilder
     $.each(params, function(k,v){
-      if(f[k]){
+      if(f[k]){        
         f[k].value = decodeURIComponent(v).replace(/\+/g, ' ')
-        //$(f[k]).trigger('change')
       }        
     }) 
-
+    // if other is selected make it  active
     $.each($('.input-other-value'), function(){
       if(this.value != ''){
         $(this).parent('.other-value').show()
