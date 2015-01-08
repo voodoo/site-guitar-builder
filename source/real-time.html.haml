@@ -2,9 +2,6 @@
   %script(src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js")
   %script(src="https://cdn.firebase.com/js/client/2.0.6/firebase.js")
   %script(src='/js/real-time.js')
-  / %script(src='/js/all/log.js')
-  / %script(src='/js/all/string.js')
-  / %script(src='/js/all/pos.js')
 
 #divPreview.hidden-xs
   /(style="border:1px solid #ccc")
@@ -20,9 +17,11 @@
       %input(type="radio" name="build-option" id="build-option-1" value='0') Manta
     %label.btn.btn-primary
       %input(type="radio" name="build-option" id="build-option-2" value='1') Shark
+    %label.btn.btn-primary
+      %input(type="radio" name="build-option" id="build-option-2" value='2') Modern Shark      
 
 .container
-  %h2 Details 
+  %h2 Wood Details 
   .row
     .col-lg-4.col-md-6.col-sm-12
       %label Body

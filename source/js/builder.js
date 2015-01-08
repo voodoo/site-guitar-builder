@@ -141,7 +141,7 @@ $(function(){
 
   // Set global build var  
   function setBuild(build){
-    $BUILD = build.toLowerCase()
+    $BUILD = build.toLowerCase().replace(/\s/g,'_')
   }
 
   // From url

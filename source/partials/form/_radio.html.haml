@@ -16,7 +16,8 @@
 
             = option
           - if section == 'body' && title == 'Shape'
-            %div= image_tag "/img/builds/#{option.downcase}/#{option.downcase}.png"
+            - option_name = option.downcase.gsub(' ', '_')
+            %div= image_tag "/img/builds/#{option_name}/#{option_name}.png"
 
     - id = "#{id_for(section_title)}-other"
     .radio

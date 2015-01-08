@@ -4,6 +4,7 @@ body:
    options: 
      - Manta
      - Shark
+     - Modern Shark
    hint: Or design your own! 
    help:  
    st: "Sharktail Guitars are smaller than normal (Manta, Shark)."
@@ -35,6 +36,15 @@ body:
    help: Any wood you like 
    wood: cap
 
+  -
+   title: Hardware Material
+   options: 
+     - Chrome
+     #- Gold
+     - Black
+   wood: hw
+
+
   - 
    title: Size
    options: 
@@ -45,14 +55,7 @@ body:
    help: 
    st: "The size of the Manta, in particular, is important. See how it fits on your lap."
 
-  -
-   title: Hardware Material
-   options: 
-     - Chrome
-     #- Gold
-     - Black
-   wood: hw
-   
+
   -
    title: Bridge type
    options: 
