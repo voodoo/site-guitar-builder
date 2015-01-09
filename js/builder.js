@@ -123,12 +123,18 @@ $(function(){
             return $.trim(this.value).length > 0
     }).serialize()
 
-
     $('.aBookmarklet').attr('href', "?" + serial)
+    //setTitle()
     var h = $("#frmBuilder").serializeHash()
     $('#jsonContainer').html(JSON.stringify(h).split(/,/g).join('<br/>'))
   }
 
+  function setTitle(){
+    var t = $('#h1Title').html().trim()
+    if(!/^Design/.test(t)){
+      $('.aBookmarklet').text(t)
+    }
+  }
   // use relative paths
   function setLocalSrcPath(){
     var src    = $('#divPreview img').attr('src')
@@ -159,6 +165,11 @@ $(function(){
         $(this).parent('.other-value').show()
       }
     })
+
+    // Update the editable title
+    if(params["title"]){
+      $('#h1Title').text(decodeURIComponent(params["title"]).replace(/\+/g, ' '))
+    }
   }
 
   // REinit parts for build
