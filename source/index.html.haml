@@ -1,103 +1,55 @@
+- content_for :head do
+  = javascript_include_tag "builder"
+  = javascript_include_tag "editable"
+  
 - content_for :nav do
+  %li
+    %a{:href => "#body"} Body      
+  %li
+    %a{:href => "#neck"} Neck
+  %li
+    %a{:href => "#head"} Head  
   %li.active
-    = link_to "About", "/about"
-  %li= link_to "Virtual Guitar Builder", "/build"
-
-%h1.fancy What is this?
-
-%p Visual guitar design tools
-
-%h5 Builder
-%ul
-  %li A virtual, dynamic, sharable representation of a guitar configuration
-  %li Inventory of guitar parts necessary for builds
-
-%h5 2D tools
-%ul
-  %li Pixelmator tools for drawing the (mostly wood) parts
-
-%h5 Builder is open source
-%p 
-  Use it to 
-  = link_to "build your own builder", "https://github.com/voodoo/site-guitar-builder"
-
-.embed-responsive.embed-responsive-16by9
-  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/vdjJhzaCqoE", :width => "100%"}
-
-%p/
-
-.alert.alert-warning(data-dismiss="alert")
-  %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
-    %span{"aria-hidden" => "true"} &times;
-  Builder has only been tested with 
-  = link_to "Chrome", "https://www.google.com/intl/en/chrome/browser/desktop/index.html"
-  and
-  = link_to "Firefox", "https://www.mozilla.org/firefox/new/?scene=2#download-fx"  
-  \- and may not work with other browsers.
+    %a{:href => "#", class: 'aBookmarklet'} Save
 
 
-%h1.fancy Who is this for?
-
-%ul
-  %li 
-    %h5 Builders
-    %ul
-      %li Gather the necessary details for the builds
-      %li Provide your own inventory that represents your opinions
-      %li Build your own visual representations
-      %li Visually document your builds - automatically adding content to your site for marketing purposes
-  %li 
-    %h5 Players 
-    %ul
-      %li Who want to build and/or design their own guitar
-      %li Share your ideas with others - have others contribute and/or provide feedback
-      %li Articulate your design in detail so the builder can bring it to life
+%h1(contentEditable="true" id="h1Title") 
+  Design
+  %small.text-muted 
+    any guitar
 
 
-%h1.fancy Why?
 
-%p One day I decided I wanted to build my own guitar.
+#divPreviewContainer
+  .row
+    .col-lg-12
+      %span#uiUpdate
+      .pull-right        
+        .btn-group(role="group")      
+          %button{type: :button, class: 'btn btn-default', :id => "aGuide"}     
+            %i.fa.fa-file-image-o
+            Guide
+      
+
+  #divPreview.hidden-xs.hidden-sm
+    = image_tag "/img/builds/blank.png", id: "img-body", class: 'img-responsive'
+    = image_tag "/img/builds/blank.png", id: "img-cap", class: 'img-responsive'
+    = image_tag "/img/builds/blank.png", id: "img-neck", class: 'img-responsive'
+    = image_tag "/img/builds/blank.png", id: "img-head", class: 'img-responsive'
+    = image_tag "/img/builds/blank.png", id: "img-hw", class: 'img-responsive'
+    = image_tag "/img/builds/scale.png", id: "img-scale", class: 'img-responsive', style: 'display:none'
+
+.row
+  %form(id='frmBuilder')
+    %input(type="hidden" name="title" id="txtTitle")
+    - %w[body neck head].each do |section|
+      .col-lg-4.col-md-6.col-sm-12= partial('partials/builder/section', locals: {section: section}) 
+
+.row
+  %h5 Developer tools
+  .btn-group(role="group")      
+    %button{type: :button, class: 'btn btn-default', :id => "aLog"} Log
+    %button{type: :button, class: 'btn btn-default', :id => "aJson"} JSON
+  #logContainer(style='display:none')
+  #jsonContainer(style='display:none')
 %p
-  I 
-  = link_to "documented the process", "http://git.vudmaska.com/"
-  , to help the builder, and these tools are the distillation (and extension of) that process. 
-%p 
-  I hope you find them useful. 
-%h5 
-  %i.fa.fa-smile-o(style='color:teal;font-size:2em')
-  Paul Vudmaska, Sharktail guitars
-
-%hr/
-
-%h4 PS
-
-%p Right now, things are completely static - on purpose, there are great benefits to this.
-%p In the future, Builder may be a sort of portal. Here are some of the use cases.
-
-%h5 Builders
-
-%ul
-  %li Use the tools to document your builds in a visually appealling, easy way
-  %li Be a recommended builder
-  %li 'Builds' will be a little like a forum thread but more focused on the process
-  %li Collaborate with the buyer and others
-  %li Bid on builds
-
-%h5 Buyers
-
-%ul
-  %li Have builders bid on your build
-  %li Provide the highest price possible - allow builders to bid
-  %li Thereby inverting the buying process
-
-
-
-%h5 Both
-
-%ul
-  %li Use Builder &amp; Talk (forum) as a community for guitar enthusiasts
-  %li Links between Talk and Builder will be practical and useful
-  %li For example, profiles in Talk will have links to their virtual build (or actual build) - identifying what makes them tick in terms of guitars
-
-
-
