@@ -2,9 +2,9 @@
 
 Visual, 2D Tools for building custom guitars.
 
-![Builder Screenshot](screenshot.png "Screenshot of Builder")
+![Designer Screenshot](screenshot.png "Screenshot of Designer")
 
-You can use the online tools at [builder.sharktailguitars.com](http://builder.sharktailguitars.com).
+You can use the online tools at [design.sharktailguitars.com](http://design.sharktailguitars.com).
 
 Or, if you are (even vaguely) familiar with Git and [Middleman](http://middlemanapp.com/), and want to create your own Virtual Guitar Builder,  you can clone this repo. 
 
