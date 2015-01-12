@@ -15,6 +15,7 @@ body:
     - Walnut
     - Mahogany
     - Alder
+    - Swamp ash
 
    hint: The top piece - cap / pickguard
    help: Any wood you like 
@@ -29,10 +30,9 @@ body:
     - Figured maple
     - Walnut
     - Paduk
-    # - Exotic
-    # - Tiger
-    # - Paduk
-    # - Koa   
+    - Figured walnut
+    - Koa
+
    hint: The top piece - cap / pickguard
    help: Any wood you like 
    wood: cap
