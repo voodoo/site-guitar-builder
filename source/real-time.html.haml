@@ -42,11 +42,9 @@
       .btn-group(role="group")      
         %button{type: :button, class: 'btn btn-default', :id => "aReset"} Reset
 
-
+/ = data.build.to_json
 / %script
-/   var $ip;
-
+/ var $ip;
 / %script(type="text/javascript" src="http://l2.io/ip.js?var=$ip")
-
 / %script(type="text/javascript")
-/   document.write("Your IP is : ", $ip);
+/ document.write("Your IP is : ", $ip);

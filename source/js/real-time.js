@@ -84,8 +84,8 @@
 
 	// Various parts for each part - we will cycle through them
 	var Part = {
-		body:  	["walnut", "alder", 		"mahogany"],
-		cap:  	["walnut", "maple", 		"spalted_maple", 	"birdseye_maple", 	"figured_maple"],
+		body:  	["walnut", "alder", 		"mahogany", "swamp_ash"],
+		cap:  	["walnut", "maple", 		"spalted_maple", 	"birdseye_maple", 	"figured_maple", "figured_walnut", "paduk", "koa"],
 		neck:  	["walnut", "rosewood", 	"ebony", 					"birdseye_maple"],
 		head:  	["walnut", "maple", 		"spalted_maple", 	"birdseye_maple", "none"],
 		hw:  	  ["chrome"],
