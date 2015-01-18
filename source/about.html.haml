@@ -1,14 +1,16 @@
 - content_for :nav do
   %li.active
     = link_to "About", "/about"
+  %li= link_to "Philosophy", "/philosophy"
   %li= link_to "Virtual Guitar Designer", "/"
   %li= link_to "Videos", "/videos"
 
 %h1.fancy What is this?
 
-%p Visual guitar design tools
+%p
+  %em Tools for designing a guitar
 
-%h5 Builder
+%h5 Designer
 %ul
   %li A virtual, dynamic, sharable representation of a guitar configuration
   %li Inventory of guitar parts necessary for builds
@@ -17,10 +19,15 @@
 %ul
   %li Pixelmator tools for drawing the (mostly wood) parts
 
-%h5 Builder is open source
-%p 
-  Use it to 
-  = link_to "build your own builder", "https://github.com/voodoo/site-guitar-builder"
+.alert.alert-success
+  %b Designer is open source
+  %p 
+    Use it to 
+    = link_to "build your own designer", "https://github.com/voodoo/site-guitar-designer"
+    by cloning the source so you can 
+    %b design your own visualizations and 
+    create your own, 
+    %b opinionated inventory.
 
 .embed-responsive.embed-responsive-16by9
   %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "//www.youtube.com/embed/vdjJhzaCqoE", :width => "100%"}
@@ -30,7 +37,7 @@
 .alert.alert-warning(data-dismiss="alert")
   %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
     %span{"aria-hidden" => "true"} &times;
-  Builder has only been tested with 
+  Designer has only been tested with 
   = link_to "Chrome", "https://www.google.com/intl/en/chrome/browser/desktop/index.html"
   and
   = link_to "Firefox", "https://www.mozilla.org/firefox/new/?scene=2#download-fx"  
@@ -43,9 +50,11 @@
   %li 
     %h5 Builders
     %ul
-      %li Gather the necessary details for the builds
-      %li Provide your own inventory that represents your opinions
-      %li Build your own visual representations
+      %li 
+        %b Inventory
+        Gather the necessary details for the builds
+      %li Builders can provide their own inventory that represents your opinions
+      %li Build your own visual designs that represent your opinions
       %li Visually document your builds - automatically adding content to your site for marketing purposes
   %li 
     %h5 Players 
@@ -57,7 +66,7 @@
 
 %h1.fancy Why?
 
-%p One day I decided I wanted to build my own guitar.
+%p One day I decided I wanted to design my own guitar.
 %p
   I 
   = link_to "documented the process", "http://git.vudmaska.com/"

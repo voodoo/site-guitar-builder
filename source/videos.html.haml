@@ -1,7 +1,8 @@
 - content_for :nav do
+  %li.active= link_to "Videos", "/videos"
   %li= link_to "About", "/about"
   %li= link_to "Virtual Guitar Builder", "/"
-  %li.active= link_to "Videos", "/videos"
+  
 
 %h1.page-header 
   Videos
@@ -17,8 +18,8 @@
       Getting started
       %small Get to know the virtual guitar designer
     %ul
-      %li Dynamic Picture - click to change wood components
-      %li The form - is linked to the picture - build your own designer
+      %li Click the image to change wood components
+      %li The form elements (for wood parts) - is linked to the picture
       %li Saving
       %li Sharing
   .col-lg-5
@@ -31,17 +32,18 @@
 .row
   .col-lg-7
     %h4.page-header 
-      Building your own virtual builder
+      Building your own designer
       %small Fork the repo
 
     %ul
       %li Click "Fork me on Github"
       %li View the repo
-      %li Fork the repo
+      %li Fork (or clone) the repo
       %li Install middleman
       %li Start the server
       %li Change the build Yaml
       %li See the changes
+      %li Deploy to Github pages
 
   .col-lg-5(style="vertical-align:center")
     .well
