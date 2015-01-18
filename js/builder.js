@@ -42,15 +42,21 @@ $(function(){
   }
 
 
+  $.notify.defaults({ className: "success", globalPosition: "bottom right", autoHideDelay: 8000})
+
   function uiUpdate(which, wood, error){
     var sError = error ? '<span style="color:firebrick">[ERROR]</span> ' : ''
     var path   = $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
-    $('#uiUpdate').html("<a href='" + path + "'>" + sError + "<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b</a>")
-    setTimeout(function(){
-      if($('#uiUpdate').html() != ''){
-        $('#uiUpdate').html('')
-      }
-    },3000)
+    //var html   = "<a data-notify-html='link' class='link' href='" + path + "'>" + sError + "<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b</a>"
+    var s = [sError,which.titleize('_'),"changed to",wood.titleize('_')].join(' ')
+    $.notify(s, "success", {position: "bottom right"})
+
+    //$('#uiUpdate').html(html)
+    // setTimeout(function(){
+    //   if($('#uiUpdate').html() != ''){
+    //     $('#uiUpdate').html('')
+    //   }
+    // },3000)
   }
 
   // Form changes
@@ -92,7 +98,7 @@ $(function(){
           if(!this.hadError){
             uiUpdate(which, wood)
           } else {
-            uiUpdate(which , wood, 1)
+            //uiUpdate(which , wood, 1)
           }
         }        
       }
