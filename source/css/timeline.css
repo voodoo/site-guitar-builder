@@ -1,3 +1,17 @@
+.timeline ul.gallery {
+  padding-left:0;
+}
+.timeline ul.gallery li{
+  list-style: none;    
+  float: left;
+  margin: 6px;
+
+
+}
+.timeline .gallery img{
+  width: 100px;
+  height: 100px;
+}
 .timeline {
     position: relative;
     padding: 20px 0 20px;

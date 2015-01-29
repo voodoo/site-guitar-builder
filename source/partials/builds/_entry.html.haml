@@ -1,0 +1,25 @@
+%li{class: index.odd? ? "timeline-inverted" : nil }
+  - body = entry[:body].blank? ? ("<ul><li>" + entry[:imgs].map{|i| i.is_a?(String) ? nil : i[:title]}.compact.join('<li>') + "</ul>") : entry[:body]
+  .timeline-badge
+    %i{class: "fa #{entry[:icon] ? 'fa-' + entry[:icon] : "fa-clock-o"}", title: index}
+  .timeline-panel
+    .timeline-heading
+      %h4.timeline-title= entry[:title]
+      %p
+        %small.text-muted
+          %i.fa.fa-clock-o
+          = entry[:date]
+    .timeline-body
+      %p= body
+
+      %ul.gallery
+        - entry[:imgs].each do |img|
+          - if img.is_a?(String)
+            - src = img
+            - title = img.sub(/\.jpg/,'').capitalize
+          - else
+            - src = img[:src]
+            - title = img[:title]
+          %li
+            = link_to "/img/builds/headless/#{index}/#{src}", target: :_blank, "data-toggle" => :tooltip, title: title do
+              = image_tag "/img/builds/headless/#{index}/#{src}", class: "img-circle"

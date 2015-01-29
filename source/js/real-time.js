@@ -1,8 +1,23 @@
- $(function(){
- 	
+$(function(){
+
+
  	 // Firebase ----------------------------------
 
 	 var imgRef   = new Firebase("https://git-builder-public.firebaseio.com/real-time");
+
+   imgRef.unauth();
+   // if(!imgRef.getAuth()){
+   //  imgRef.authAnonymously(function(error, authData) {
+   //    if (error) {
+   //      console.log("Login Failed!", error);
+   //    } else {
+   //      console.log("Authenticated successfully with payload:", authData);
+   //    }
+   //  });    
+   // }
+
+
+
 	 var $current = null
 	 imgRef.on("value", function(snapshot) {
 	 	$current = snapshot.val().currents

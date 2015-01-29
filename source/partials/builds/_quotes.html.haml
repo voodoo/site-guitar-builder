@@ -1,0 +1,8 @@
+%h1.page-header Quotes
+- quotes.each_with_index do |quote, idx|
+  /{class: idx.odd? ? "blockquote-reverse" : nil }
+  %blockquote
+    %p
+      &ldquo;
+      = quote
+      &rdquo;

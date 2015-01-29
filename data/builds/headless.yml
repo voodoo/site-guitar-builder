@@ -1,0 +1,242 @@
+title: Headless Neckthrough
+player: VuduChild
+builder: Orion Guitars
+entries:
+  - date: "October 31st, 2014, 05:43 PM"
+    icon: birthday-cake
+    title: Picture if you will 
+
+    imgs: 
+      - src: mock.jpg
+        title: Picture if you will a 2 1/2 maple,walnut,maple,walnut, maple strip comprising the center of a neck through headless 
+          Strandberg-ish 6-string electric guitar.  
+      - src: mock2.jpg
+        title: Floyd Rose speedloader fixed bridge and nut. Walnut body with a maple top.
+      - src: mock3.jpg
+        title: Railhammer anvil at the bridge. Maple fretboard. Here we go.
+  - date: "November 1st, 2014, 05:43 PM"
+    icon: check
+    title: Walnut Wings
+    body: 
+    imgs: 
+      - src: wings.jpg
+        title: Here is the center strip with the walnut backs of the wings.
+
+  - date: "November 4th, 2014, 05:43 PM"
+    icon: check
+    title: Starting with 1 5/8" thick walnut
+    body: Starting with 1 5/8" thick walnut but that will get thinned out once the top is on. White paper represents a book matched spalted maple cap, which will be ~1/4 - 5/16" thick. Fret board is curly maple to match the maple strips in the neck.
+    imgs: 
+      - strip.jpg
+
+  - date: "November 6th, 2014, 05:43 PM"
+    icon: check
+    title: Routed the truss rod channel
+    body: Routed the truss rod channel and cross channel for the spoke wheel.
+          With the fretboard sitting in place.
+    imgs: 
+      - src: truss1.jpg
+        title: Routed the truss rod channel and cross channel for the spoke wheel
+      - src: truss2.jpg
+        title: With the fretboard sitting in place
+
+  - date: "November 8th, 2014, 05:43 PM"
+    icon: check
+    title: Roughly what the maple cap will look like.
+    imgs: 
+      - src: cap.jpg
+        title: Used a Minwax liquid stabilizer to, well, stabilize the soft spalted maple.
+      - src: neckthrough.jpg
+        title: Removed 5/16" from the center around the fretboard. 
+      - src: fretboard.jpg
+        title: This will accommodate the maple cap.
+      - src: fretboard1.jpg
+        title:  Maple sitting (kind of) in place.
+      - src: mapleside.jpg
+        title: From the side.
+  - date: "November 9th, 2014, 05:43 PM"
+    icon: check
+    title: From the end zone. 
+    imgs: 
+      - src: endzone.jpg
+        title: Centerpiece rough profile.
+      - src: centerpiece.jpg
+        title: Neck lay back is 5.5mm from nut to 12th fret carried to the tip of the fretboard.
+      - src: knobplacement.jpg
+        title: That was the layback on the hardware-donor guitar.
+      - src: knobplacement1.jpg
+        title: Contemplating knob placement.
+      - src: channel.jpg
+        title: Cavities in the wings and a proposed channel to lie under the maple cap.
+  - date: "November 11th, 2014, 05:43 PM"
+    icon: check
+    title: Connected the cavities
+    imgs: 
+      - src: cav.jpg
+        title: Connected the cavities with a 1/4" x 1/4" channel with some wiggle room around the pickup location. 
+      - src: cav-taped.jpg
+        title: Taped off the cavity.
+      - src: cav-maple.jpg
+        title: Cut the maple plate to fit roughly. 
+      - src: cav-caul.jpg
+        title: 3/4" MDF caul for clamping.
+  - date: "November 14th, 2014, 05:43 PM"
+    icon: check
+    title: Maple front and neck relief
+    imgs: 
+      - src: maple-front.jpg
+        title: Maple front attached.  
+      - src: shaped-back.jpg
+        title: Shaped the back of the neck and heel. 
+      - src: rough-heel.jpg
+        title: Rough heel carve. Feels like there's too much there.  
+      - src: rough-heel1.jpg
+        title: Feels about right.
+  - date: "November 15th, 2014, 05:43 PM"
+    icon: check
+    title: Donor git - the bridge
+    imgs: 
+      - src: donor-git.jpg
+        title: Heres the guitar from which the hardware was taken. Made a template for this bridge cavity from 1/2' sandply. Front end of the cavity was a bit tight on the original so I added 1/8". 
+      - src: leg-rest.jpg
+        title: Took it down 7/16". The original cavity would have left ~1/4" at the rear so I opened it up all the way. Nothing will stick out that end to get in the way as a leg rest.. 
+      - src: from-endzone.jpg
+        title: From the endzone. Also started contouring the top. 
+      - src: hb-cavity.jpg
+        title: With the HB cavity routed 1" deep. 
+      - src: bridge.jpg
+        title: Bridge and a borrowed Railhammer in place. PU on this will be chrome Railhammer Anvil.
+  - date: "November 22nd, 2014, 05:43 PM"
+    icon: check
+    title: Strat Jack on back
+    imgs: 
+      - src: strat-jack.jpg
+        title: Three holes for the Strat jack plate. Goal was to aim it at a point so the cord would not be in the way regardless of which arch is sitting on your leg or lap. 
+      - src: cover-recess.jpg
+        title: Made cover recess templates and routed 1/4" deep. 
+      - src: floyd-rose-post.jpg
+        title: Located and drilled holes for the Floyd posts. 
+  - date: "November 26th, 2014, 05:43 PM"
+    icon: check
+    title: Fret dots and contours
+    body: A few more pics showing the body contours.
+    imgs: 
+      - back.jpg
+      - body-dots.jpg
+      - body.jpg
+      - contours.jpg
+      - fret-dots.jpg
+      - side.jpg
+
+  - date: "December 2nd, 2014, 05:43 PM"
+    icon: check
+    title: Fret beveled and dressed
+    body: A few more pics of the neck
+    imgs: 
+      - beveled.jpg
+      - frets.jpg
+
+  - date: "December 8th, 2014, 05:43 PM"
+    icon: check
+    title: The nut
+    imgs: 
+      - src: too-low.jpg
+        title: Too low for the nut. Considered steel shims but they would be pretty thick and obvious.
+      - nut.jpg
+      - src: center-piece.jpg
+        title: Sanded a cut off from the center piece to 1/8", lined up the striped and glued it on the headstock.
+      - src: trimmed.jpg
+        title: Trimmed the width and marked the slot for the nut. Used the card scraper trick to keep me from tearing into headstock.  
+      - rounded.jpg
+      - src: slot.jpg
+        title: Slot with holes for the speed loader nut.
+      - nut-in-place.jpg
+      - src: tuner.jpg
+        title: A place for the tuner.    
+  - date: "December 10th, 2014, 05:43 PM"
+    icon: check
+    title: First setup
+    body: Couldn't resist (and needed to put some doubts to rest.)
+    imgs: 
+      - first-setup.jpg
+
+  - date: "December 10th, 2014, 05:43 PM"
+    icon: check
+    title: Side view / cavity coers
+    imgs: 
+      - src: side-view.jpg
+        title: Side view of bridge. Adjusted the third screw so it could law back a bit more if needed. 
+      - src: cavity-covers.jpg
+        title: Cavity covers made.
+
+  - date: "December 13th, 2014, 05:43 PM"
+    icon: check
+    title: First coat of tung oil
+    body: '"Tung oil looks great on that!"'
+    imgs: 
+      - tung.jpg
+      - tung1.jpg
+
+
+  - date: "December 18th, 2014, 05:43 PM"
+    icon: check
+    title: Clear coats
+    body: Let them sit for a while before polishing.
+    imgs: 
+      - clear.jpg
+      - clear1.jpg
+
+  - date: "Jan 2nd, 2014, 05:43 PM"
+    icon: check
+    title: Final tung oil / Shielding paint
+    body: Sat for a few weeks. Went over the whole thing with 0000 steel wool to knock down any nibs or rough spots from the last tung oil coat. Vacuumed and blew off the dust. Applied a coat of paste was, let that dry and polished. Then 2 coats of shielding paint in the cavities. 
+    imgs: 
+      - shielding-paint.jpg
+      - tung-final.jpg            
+
+  - date: "Jan 4th, 2014, 05:43 PM"
+    icon: check
+    title: Seymour Duncan Triple shot
+    body: With all the guts installed. Using a Seymour Duncan triple shot ring to split the P rail into either single coil, parallel and serial humbuckers. <p> And the pup sounds good. Beginning to realize I don't have much of an ear for pup subtleties other than being able to say that they are either very bright, medium or dull. I would call this one medium. A nice single coil sound too. That's as eloquent as I can wax. I like the triple shot ring. Nice option when a slew of knobs won't fit.
+    imgs: 
+      - front.jpg
+      - back.jpg  
+
+
+  - date: "Jan 10th, 2014, 05:43 PM"
+    icon: check
+    title: Close ups of bridge
+    imgs: 
+      - src: bridge.jpg
+        title: Requires Floyd rose double ended strings. Pop up the saddle. Remove the old string. New string in. Takes about that long. 
+      - src: bridge-aft.jpg  
+        title: Some close ups of the bridge. 
+      - src: bullet.jpg
+        title: Rough tuning with and Allen screw in the saddle. Fine tuning with the thumb screw like the usual Floyd rose. 
+
+  - date: "Jan 21st, 2014, 05:43 PM"
+    icon: check
+    title: A few additions
+    imgs: 
+      - src: engrave.jpg
+        title: Headstock engraved.
+      - src: strap.jpg  
+        title: Strap buttons attached.
+      - src: strap-aft.jpg
+        title: Aft view
+
+quotes:
+  - Normally I like classic shapes but this one is growing on me. This will turn out cool.
+  - Trippy. This one looks like an exciting build. Looking forward to the final results.
+  - Really liking this.
+  - Superb, refreshingly different!
+  - Super cool and unique build.
+  - That is looking fantastic!! Can't wait to see this one finished.
+  - I have Christmas visions of this guitar with a set of Tele pickups onboard running through my head this morning.
+  - Tung oil looks great on that!
+  - Great design and a beautiful guitar. Major kudos!
+  - That looks fantastic!! I love it.
+  - Wow. That is a thing of beauty.
+  - As a style it's not really my cup of tea, but the work is beautifully done. Very crisp and precise. The finish looks amazing on the spalt.
+  - <b>Wow, that instrument is a work of art. I bet you can't stop staring at it. I've been having problems taking my eyes off of the pics. Great job.</b>
+  - Beautiful!!!

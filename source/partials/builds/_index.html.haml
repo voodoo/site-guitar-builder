@@ -1,0 +1,15 @@
+.panel.panel-default
+  .panel-heading
+    /%i.fa.fa-clock-o.fa-fw
+    %b= build[:title]
+    %small= link_to "(tdpri)", "http://www.tdpri.com/forum/tele-home-depot/521290-headless-neckthrough.html"
+    .pull-right
+      Build for 
+      %b= build[:player]
+      by 
+      %b= build[:builder]
+  / /.panel-heading
+  .panel-body
+    %ul.timeline
+      - build[:entries].each_with_index do |entry, idx|
+        = partial('partials/builds/entry', locals: {entry: entry, index: idx})

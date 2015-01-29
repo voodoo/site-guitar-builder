@@ -3,7 +3,8 @@ set :js_dir,      'js'
 set :images_dir,  'img'
 activate :directory_indexes
 
-config[:file_watcher_ignore] += [ /\.pxm/ ]
+require 'helpers/builds_data_helper'
+#config[:file_watcher_ignore] += [ /\.pxm/ ]
 
 
 # Use relative URLs
