@@ -47,9 +47,11 @@ $(function(){
   function uiUpdate(which, wood, error){
     var sError = error ? '<span style="color:firebrick">[ERROR]</span> ' : ''
     var path   = $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
-    //var html   = "<a data-notify-html='link' class='link' href='" + path + "'>" + sError + "<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b</a>"
+    console.log(path)
+    var html   = "<a data-notify-html='link' class='link' href='" + path + "'>" + sError + "<b>" + which.titleize('_') + "</b> changed to <b>" + wood.titleize('_') + "</b</a>"
     var s = [sError,which.titleize('_'),"changed to",wood.titleize('_')].join(' ')
     $.notify(s, "success", {position: "bottom right"})
+    log(html)
 
     //$('#uiUpdate').html(html)
     // setTimeout(function(){
@@ -76,32 +78,24 @@ $(function(){
 
     var which = $(this).parents('.form-group').data('wood')
     if(which && !isOther){ // Wood needs changing?
-      var wood = $(this).val().toName()
-        if(true){//wood != 'none'
-        var img   = document.getElementById('img-' + which)
-        if(wood == 'none'){
-          var src   =  $PATH + "blank.png" 
-        } else {
-          var src   =  $PATH + $BUILD + "/" + which + "/" + wood + ".png"  
-        }
-        
-        //try{img.src   = src} catch(e) {$l(e)}
-        //$('#aWood').attr('href', src).text(wood + " changed to " + which)
-        img.src      = src
-        img.hadError = false
-        img.onerror = function(){
-          this.hadError = true
-          //console.warn(this.src + " NOT FOUND")
-          this.src = $PATH + "blank.png"
-        }
-        img.onload = function(){
-          if(!this.hadError){
-            uiUpdate(which, wood)
-          } else {
-            //uiUpdate(which , wood, 1)
-          }
-        }        
+      var wood      = $(this).val().toName()
+      var img       = document.getElementById('img-' + which)
+      var src       =  $PATH + $BUILD + "/" + which + "/" + wood + ".png" 
+      img.src       = src
+      img.hadError  = false
+      img.onerror   = function(){
+        this.hadError = true
+        console.warn(this.src + " NOT FOUND")
+        this.src = $PATH + "blank.png"
       }
+      img.onload = function(){
+        if(!this.hadError){
+          uiUpdate(which, wood)
+        } else {
+          //uiUpdate(which , wood, 1)
+        }
+      }        
+      
     }     
 
     // Show or hide other text field
@@ -180,7 +174,7 @@ $(function(){
 
   // REinit parts for build
   function initWoodParts(){
-    log('wood parts')
+    log('init wood parts')
     
     if($BUILD == 'other'){
       $('#divPreviewContainer').hide()
@@ -207,11 +201,11 @@ $(function(){
     initForm() 
     initWoodParts()
 
-    $('#uiUpdate').hide()
+    // $('#uiUpdate').hide()
 
-    setTimeout(function(){
-      $('#uiUpdate').show()
-    },2000)    
+    // setTimeout(function(){
+    //   $('#uiUpdate').show()
+    // },2000)    
   }
 
 

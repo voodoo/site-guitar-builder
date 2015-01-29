@@ -1,3 +1,9 @@
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+}
 /*!
  * Bootstrap v3.3.0 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
@@ -96,6 +102,20 @@ h1.fancy{
   height: 431px;
   width:274px; 
 } */
+.timeline ul.gallery {
+  padding-left:0;
+}
+.timeline ul.gallery li{
+  list-style: none;    
+  float: left;
+  margin: 6px;
+
+
+}
+.timeline .gallery img{
+  width: 100px;
+  height: 100px;
+}
 .timeline {
     position: relative;
     padding: 20px 0 20px;
