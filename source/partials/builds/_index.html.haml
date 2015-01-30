@@ -1,3 +1,16 @@
+%link{:href => "//23.253.214.114/gallery/css/blueimp-gallery.min.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+%script{:src => "//23.253.214.114/gallery/js/blueimp-gallery.min.js", :type => "text/javascript"}
+
+
+#blueimp-gallery.blueimp-gallery.blueimp-gallery-controls
+  .slides
+  %h3.title
+  %a.prev ‹
+  %a.next ›
+  / %a.close ×
+  %a.play-pause
+  %ol.indicator
+
 .panel.panel-default
   .panel-heading
     /%i.fa.fa-clock-o.fa-fw
@@ -10,6 +23,9 @@
       %b= build[:builder]
   / /.panel-heading
   .panel-body
-    %ul.timeline
+    %ul.timeline#gallery
       - build[:entries].each_with_index do |entry, idx|
         = partial('partials/builds/entry', locals: {entry: entry, index: idx})
+
+
+= javascript_include_tag 'gallery'

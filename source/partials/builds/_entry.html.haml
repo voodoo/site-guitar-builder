@@ -22,4 +22,20 @@
             - title = img[:title]
           %li
             = link_to "/img/builds/headless/#{index}/#{src}", target: :_blank, "data-toggle" => :tooltip, title: title do
-              = image_tag "/img/builds/headless/#{index}/thumb/#{src}", class: "img-circle"
+              = image_tag "/img/builds/headless/#{index}/thumb/#{src}", class: "img-circle img-responsive"
+
+
+
+/ #links
+/   .container
+/     .row
+/       - site(:gallery).each do |gallery|
+/         - name  = gallery.keys.first
+/         - title = gallery.title
+/         - imgs = gallery.images
+/         .col-lg-6.gallery
+/           .panel.panel-default
+/             .panel-heading= title
+/             .panel-body
+/               - imgs.each do |img|
+/                 %a{href: site_img_path("gallery/#{name}/#{img.src}"), title: img.title}= site_img "gallery/#{name}/thumb/#{img.src}", class: 'img-responsive',  "data-toggle" => :tooltip, title: img.title

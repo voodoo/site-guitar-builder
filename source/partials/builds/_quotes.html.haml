@@ -1,8 +1,10 @@
-%h1.page-header Quotes
+%h1.page-header 
+  Quotes 
+  %small general feedback from others
 - quotes.each_with_index do |quote, idx|
   /{class: idx.odd? ? "blockquote-reverse" : nil }
   %blockquote
     %p
-      &ldquo;
+      %i.fa.fa-quote-left
       = quote
-      &rdquo;
+      %i.fa.fa-quote-right
