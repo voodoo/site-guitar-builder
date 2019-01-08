@@ -24,9 +24,6 @@ Once you get the builder like you want, all you have to do is
     
 Then you can send your friends (or builder) to your github page to check it out.
 
-# Who
-
-[Sharktail Guitars](http://www.sharktailguitars.com)
 
 # License
 
